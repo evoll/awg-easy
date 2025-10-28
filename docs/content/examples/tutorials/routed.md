@@ -2,7 +2,7 @@
 title: Routed setup (No NAT)
 ---
 
-This guide shows how to run **wg-easy** with a routed setup, so packets are forwarded instead of NATed.
+This guide shows how to run **awg-easy** with a routed setup, so packets are forwarded instead of NATed.
 
 In a routed design, each WireGuard client keeps its own IPv4/IPv6 address. That means you can identify clients by their real addresses instead of seeing everything as the WireGuard server’s IP.
 
@@ -16,9 +16,9 @@ To make use of our own IPv4/IPv6 addresses, run the container with the `network_
 
 ```yaml
 services:
-    wg-easy:
-        image: ghcr.io/wg-easy/wg-easy:15
-        container_name: wg-easy
+    awg-easy:
+        image: ghcr.io/evoll/awg-easy:15
+        container_name: awg-easy
         network_mode: 'host'
         volumes:
             - ./config:/etc/wireguard

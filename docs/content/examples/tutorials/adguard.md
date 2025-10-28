@@ -6,10 +6,10 @@ This tutorial is a follow-up to the official [Traefik tutorial](./traefik.md). I
 
 ## Prerequisites
 
-- A working [wg-easy](./basic-installation.md) and [Traefik](./traefik.md) setup from the previous guides.
+- A working [awg-easy](./basic-installation.md) and [Traefik](./traefik.md) setup from the previous guides.
 
 /// warning | Important: Following this guide will reset your WireGuard configuration.
-The process involves re-creating the `wg-easy` container and its data, which means **all existing WireGuard clients and settings will be deleted.**
+The process involves re-creating the `awg-easy` container and its data, which means **all existing WireGuard clients and settings will be deleted.**
 
 You will need to create your clients again after completing this guide.
 ///
@@ -65,15 +65,15 @@ networks:
         external: true
 ```
 
-## Update `wg-easy` configuration
+## Update `awg-easy` configuration
 
-Modify the corresponding sections of your existing `wg-easy` compose file to match the updated version below.
+Modify the corresponding sections of your existing `awg-easy` compose file to match the updated version below.
 
-File: `/etc/docker/containers/wg-easy/docker-compose.yml`
+File: `/etc/docker/containers/awg-easy/docker-compose.yml`
 
 ```yaml
 services:
-  wg-easy:
+  awg-easy:
     ports:
       - "51820:51820/udp"
     ...
@@ -93,7 +93,7 @@ services:
       # Replace $password$ with your unhashed password
       - INIT_PASSWORD=$password$
       # Replace $example.com$ with your domain
-      - INIT_HOST=wg-easy.$example.com$
+      - INIT_HOST=awg-easy.$example.com$
       - INIT_PORT=51820
       - INIT_DNS=10.42.42.43,fdcc:ad94:bacf:61a3::2b
       - INIT_IPV4_CIDR=10.8.0.0/24
@@ -108,17 +108,17 @@ networks:
   ...
 ```
 
-## Setup Wireguard
+## Setup AmneziaWG
 
-1. Restart `wg-easy`:
+1. Restart `awg-easy`:
 
     ```shell
-    cd /etc/docker/containers/wg-easy
+    cd /etc/docker/containers/awg-easy
     sudo docker compose down -v
     sudo docker compose up -d
     ```
 
-2. Edit Wireguard's Hooks.
+2. Edit AmneziaWG's Hooks.
 
     In the Admin Panel of your WireGuard server, go to the Hooks tab and replace it with:
 
@@ -134,10 +134,10 @@ networks:
     iptables -D INPUT -p udp -m udp --dport {{port}} -j ACCEPT || true; ip6tables -D INPUT -p udp -m udp --dport {{port}} -j ACCEPT || true; iptables -t nat -D PREROUTING -i wg0 -p udp --dport 53 -j DNAT --to-destination 10.42.42.43 || true; iptables -t nat -D PREROUTING -i wg0 -p tcp --dport 53 -j DNAT --to-destination 10.42.42.43 || true; ip6tables -t nat -D PREROUTING -i wg0 -p udp --dport 53 -j DNAT --to-destination fdcc:ad94:bacf:61a3::2b || true; ip6tables -t nat -D PREROUTING -i wg0 -p tcp --dport 53 -j DNAT --to-destination fdcc:ad94:bacf:61a3::2b || true; iptables -D FORWARD -i wg0 -j ACCEPT || true; iptables -D FORWARD -o wg0 -j ACCEPT || true; ip6tables -D FORWARD -i wg0 -j ACCEPT || true; ip6tables -D FORWARD -o wg0 -j ACCEPT || true; iptables -t nat -D POSTROUTING -s {{ipv4Cidr}} -o {{device}} -j MASQUERADE || true; ip6tables -t nat -D POSTROUTING -s {{ipv6Cidr}} -o {{device}} -j MASQUERADE || true;
     ```
 
-3. Restart `wg-easy` to apply changes:
+3. Restart `awg-easy` to apply changes:
 
     ```shell
-    sudo docker restart wg-easy
+    sudo docker restart awg-easy
     ```
 
 ## Setup Adguard Home
