@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { drizzle } from 'drizzle-orm/libsql';
 import { migrate as drizzleMigrate } from 'drizzle-orm/libsql/migrator';
 import { createClient } from '@libsql/client';
