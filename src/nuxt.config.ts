@@ -122,9 +122,8 @@ export default defineNuxtConfig({
       // Disable redirect to prevent locale switching during SSR
       redirectOn: 'root',
     },
-    bundle: {
-      optimizeTranslationDirective: false,
-    },
+    // Disable lazy loading to prevent runtime locale merging issues
+    lazy: false,
   },
   nitro: {
     esbuild: {

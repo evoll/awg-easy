@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import type {
   NitroFetchRequest,
   NitroFetchOptions,
@@ -73,4 +72,3 @@ export function useSubmit<
     }
   };
 }
-/* eslint-disable @typescript-eslint/no-unused-vars */

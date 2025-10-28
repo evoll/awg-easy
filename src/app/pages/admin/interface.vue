@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 <template>
   <main v-if="data">
     <FormElement @submit.prevent="submit">
@@ -246,4 +245,3 @@ async function restartInterface() {
   await _restartInterface(undefined);
 }
 </script>
-/* eslint-disable @typescript-eslint/no-unused-vars */

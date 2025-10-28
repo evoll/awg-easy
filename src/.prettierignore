@@ -1,2 +1,5 @@
 pnpm-lock.yaml
 server/database/migrations/meta
+app/pages
+app/composables
+app/utils
