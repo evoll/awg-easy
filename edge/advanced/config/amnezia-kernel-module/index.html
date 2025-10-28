@@ -672,6 +672,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#kernel-module-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel Module Compatibility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#supported-configurations" class="md-nav__link">
     <span class="md-ellipsis">
       Supported Configurations
@@ -778,6 +787,15 @@
   
     <nav class="md-nav" aria-label="Troubleshooting">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#environment-variables" class="md-nav__link">
@@ -1826,6 +1844,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#kernel-module-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel Module Compatibility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#supported-configurations" class="md-nav__link">
     <span class="md-ellipsis">
       Supported Configurations
@@ -1934,6 +1961,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
       Environment Variables
@@ -1999,7 +2035,7 @@
 <li><strong>amneziawg-tools</strong> (<code>awg</code>, <code>awg-quick</code>) - Command-line tools for managing AmneziaWG</li>
 <li><strong>amneziawg.ko</strong> - Pre-compiled kernel module for Alpine LTS kernel 6.12.50</li>
 </ol>
-<p>Kernel Module Compatibility</p>
+<h3 id="kernel-module-compatibility"><a class="toclink" href="#kernel-module-compatibility">Kernel Module Compatibility</a></h3>
 <p>The included kernel module is <strong>pre-built for Alpine Linux LTS kernel 6.12.50</strong>. This matches the kernel used after running the bare-metal installation script which upgrades from <code>-virt</code> to <code>linux-lts</code>.</p>
 <h3 id="supported-configurations"><a class="toclink" href="#supported-configurations">Supported Configurations</a></h3>
 <table>
@@ -2043,16 +2079,16 @@
 <span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">awg-easy</span>
 <span class="w">        </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">awg-easy</span>
 <span class="w">        </span><span class="nt">environment</span><span class="p">:</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPERIMENTAL_AWG=true</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPERIMENTAL_AWG=true</span>
 <span class="w">        </span><span class="nt">volumes</span><span class="p">:</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/etc/wireguard</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/etc/wireguard</span>
 <span class="w">        </span><span class="nt">cap_add</span><span class="p">:</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NET_ADMIN</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SYS_MODULE</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NET_ADMIN</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SYS_MODULE</span>
 <span class="w">        </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;51820:51820/udp&#39;</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;51821:51821/tcp&#39;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;51820:51820/udp&#39;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;51821:51821/tcp&#39;</span>
 </code></pre></div>
 <h2 id="verification"><a class="toclink" href="#verification">Verification</a></h2>
 <h3 id="check-kernel-version"><a class="toclink" href="#check-kernel-version">Check Kernel Version</a></h3>
@@ -2102,7 +2138,7 @@ docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 <li>Pin to specific image versions in production</li>
 <li>Monitor container behavior</li>
 </ol>
-<p>Performance</p>
+<h3 id="performance"><a class="toclink" href="#performance">Performance</a></h3>
 <p><strong>Kernel Module Advantages:</strong></p>
 <ul>
 <li>Lower CPU usage (10-30% improvement)</li>
