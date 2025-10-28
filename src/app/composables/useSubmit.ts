@@ -6,20 +6,21 @@ import type {
 } from 'nitropack/types';
 import { FetchError } from 'ofetch';
 
-// Упрощённый тип для метода запроса (избегаем сложной условной логики)
-type RequestMethod = 'get' | 'post' | 'put' | 'delete' | 'patch';
-
-// Тип для RevertFn с упрощённой типизацией
 type RevertFn<
   R extends NitroFetchRequest,
   T = unknown,
   O extends NitroFetchOptions<R> = NitroFetchOptions<R>,
 > = (
   success: boolean,
-  data: TypedInternalResponse<R, T, RequestMethod> | undefined
+  data:
+    | TypedInternalResponse<
+        R,
+        T,
+        NitroFetchOptions<R> extends O ? 'get' : ExtractedRouteMethod<R, O>
+      >
+    | undefined
 ) => Promise<void>;
 
-// Опции для useSubmit
 type SubmitOpts<
   R extends NitroFetchRequest,
   T = unknown,
@@ -30,13 +31,6 @@ type SubmitOpts<
   noSuccessToast?: boolean;
 };
 
-/**
- * Хук для отправки HTTP-запросов с обработкой успеха/ошибок и показом тостов
- * @param url URL запроса
- * @param options Опции fetch
- * @param opts Дополнительные опции (revert, сообщения)
- * @returns Асинхронная функция для выполнения запроса
- */
 export function useSubmit<
   R extends NitroFetchRequest,
   O extends NitroFetchOptions<R> & { body?: never },
@@ -44,43 +38,36 @@ export function useSubmit<
 >(url: R, options: O, opts: SubmitOpts<R, T, O>) {
   const toast = useToast();
 
-  return async (data: T) => {
+  return async (data: unknown) => {
     try {
-      // Явно указываем тип ответа
-      const res = await $fetch<TypedInternalResponse<R, T, RequestMethod>>(url, {
+      const res = await $fetch(url, {
         ...options,
         body: data,
       });
 
-      // Показываем тост об успехе, если не отключено
       if (!opts.noSuccessToast) {
         toast.showToast({
           type: 'success',
-          message: opts.successMsg ?? 'Request completed successfully',
+          message: opts.successMsg,
         });
       }
 
-      // Вызываем revert с успешным результатом
-      await opts.revert(true, res);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      await opts.revert(true, res as any);
     } catch (e) {
-      let errorMessage: string;
-
       if (e instanceof FetchError) {
-        errorMessage = e.data?.message ?? 'Fetch error occurred';
+        toast.showToast({
+          type: 'error',
+          message: e.data.message,
+        });
       } else if (e instanceof Error) {
-        errorMessage = e.message;
+        toast.showToast({
+          type: 'error',
+          message: e.message,
+        });
       } else {
-        console.error('Unexpected error in useSubmit:', e);
-        errorMessage = 'An unexpected error occurred';
+        console.error(e);
       }
-
-      // Показываем тост об ошибке
-      toast.showToast({
-        type: 'error',
-        message: errorMessage,
-      });
-
-      // Вызываем revert с ошибкой
       await opts.revert(false, undefined);
     }
   };

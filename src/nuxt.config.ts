@@ -121,7 +121,10 @@ export default defineNuxtConfig({
       fallbackLocale: 'en',
       // Disable redirect to prevent locale switching during SSR
       redirectOn: 'root',
-    }, 
+    },
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
   },
   nitro: {
     esbuild: {
