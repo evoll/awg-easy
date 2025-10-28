@@ -1,23 +1,46 @@
-# WireGuard Easy
+# AmneziaWG Easy
 
-[![Build & Publish latest Image](https://github.com/wg-easy/wg-easy/actions/workflows/deploy.yml/badge.svg?branch=production)](https://github.com/wg-easy/wg-easy/actions/workflows/deploy.yml)
-[![Lint](https://github.com/wg-easy/wg-easy/actions/workflows/lint.yml/badge.svg?branch=master)](https://github.com/wg-easy/wg-easy/actions/workflows/lint.yml)
-[![GitHub Stars](https://img.shields.io/github/stars/wg-easy/wg-easy)](https://github.com/wg-easy/wg-easy/stargazers)
-[![License](https://img.shields.io/github/license/wg-easy/wg-easy)](LICENSE)
-[![GitHub Release](https://img.shields.io/github/v/release/wg-easy/wg-easy)](https://github.com/wg-easy/wg-easy/releases/latest)
-[![Image Pulls](https://img.shields.io/badge/image_pulls-12M+-blue)](https://github.com/wg-easy/wg-easy/pkgs/container/wg-easy)
+---
 
-You have found the easiest way to install & manage WireGuard on any Linux host!
+> [!IMPORTANT]
+>
+> The container does not use the Go implementation! It is mandatory to install the AmneziaWG kernel module on the host system.
+>
+> Instructions for installing the module: [amneziawg-linux-kernel-module](https://github.com/amnezia-vpn/amneziawg-linux-kernel-module)
+>
+> Instructions for the correct installation of the module on Ubuntu 24.x and higher: [amneziawg-linux-kernel-module for Ubuntu 24.x](docs/content/guides/ubuntu24.md)
+
+> [!IMPORTANT]
+>
+> Контейнер не использует реализацию на Go! Для работы обязательно требуется установить модуль ядра AmneziaWG на хост-систему.
+>
+> Инструкция по установке модуля: [amneziawg-linux-kernel-module](https://github.com/amnezia-vpn/amneziawg-linux-kernel-module)
+>
+> Инструкция по правильной установке модуля на Ubuntu 24.x и выше: [amneziawg-linux-kernel-module for Ubuntu 24.x](docs/content/guides/ubuntu24ru.md)
+
+[![Build & Publish latest Image](https://github.com/evoll/awg-easy/actions/workflows/deploy.yml/badge.svg?branch=production)](https://github.com/evoll/awg-easy/actions/workflows/deploy.yml)
+[![Lint](https://github.com/evoll/awg-easy/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/evoll/awg-easy/actions/workflows/lint.yml)
+[![GitHub Stars](https://img.shields.io/github/stars/evoll/awg-easy)](https://github.com/evoll/awg-easy/stargazers)
+[![License](https://img.shields.io/github/license/evoll/awg-easy)](LICENSE)
+[![GitHub Release](https://img.shields.io/github/v/release/evoll/awg-easy)](https://github.com/evoll/awg-easy/releases/latest)
+[![Image Pulls](https://img.shields.io/badge/image_pulls-12M+-blue)](https://github.com/evoll/awg-easy/pkgs/container/awg-easy)
+
+You have found the easiest way to install & manage AmneziaWG on any Linux host!
 
 <!-- TOOD: update screenshot -->
+[![awg-easy Screenshot](./assets/screenshot.png "awg-easy Screenshot")](./assets/screenshot.png "awg-easy Screenshot")
+[![awg-easy Screenshot2](./assets/screenshot2.png "awg-easy Screenshot2")](./assets/screenshot2.png "awg-easy Screenshot2")
 
-<p align="center">
-  <img src="./assets/screenshot.png" width="802" alt="wg-easy Screenshot" />
-</p>
+## AmneziaWG Support 
+- AmneziaWG obfuscation parameters support (Jc, Jmin, Jmax, S1-S4, H1-H4, I1-I5, J1-J3, Itime)
+- Parameter constraints validation and random generation on first run, every install will be unique
+- Adaptive UI theme that detects AmneziaWG vs WireGuard and switches branding accordingly
+- Automatic fallback to standard WireGuard when AmneziaWG kernel module is not available
+
+This project is a fork of [wg-easy](https://github.com/wg-easy/wg-easy)
 
 ## Features
-
-- All-in-one: WireGuard + Web UI.
+- All-in-one: AmneziaWG + Web UI.
 - Easy installation, simple to use.
 - List, create, edit, delete, enable & disable clients.
 - Show a client's QR code.
@@ -35,23 +58,23 @@ You have found the easiest way to install & manage WireGuard on any Linux host!
 - 2FA support
 
 > [!NOTE]
-> To better manage documentation for this project, it has its own site here: [https://wg-easy.github.io/wg-easy/latest](https://wg-easy.github.io/wg-easy/latest)
+> To better manage documentation for this project, it has its own site here: [https://evoll.github.io/awg-easy/latest](https://evoll.github.io/awg-easy/latest)
 
-- [Getting Started](https://wg-easy.github.io/wg-easy/latest/getting-started/)
-- [Basic Installation](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/basic-installation/)
-- [Caddy](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/caddy/)
-- [Traefik](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/traefik/)
-- [Podman](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/podman-nft/)
-- [AdGuard Home](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/adguard/)
+- [Getting Started](https://evoll.github.io/awg-easy/latest/getting-started/)
+- [Basic Installation](https://evoll.github.io/awg-easy/latest/examples/tutorials/basic-installation/)
+- [Caddy](https://evoll.github.io/awg-easy/latest/examples/tutorials/caddy/)
+- [Traefik](https://evoll.github.io/awg-easy/latest/examples/tutorials/traefik/)
+- [Podman](https://evoll.github.io/awg-easy/latest/examples/tutorials/podman-nft/)
+- [AdGuard Home](https://evoll.github.io/awg-easy/latest/examples/tutorials/adguard/)
 
 > [!NOTE]
-> If you want to migrate from the old version to the new version, you can find the migration guide here: [Migration Guide](https://wg-easy.github.io/wg-easy/latest/advanced/migrate/)
+> If you want to migrate from the old version to the new version, you can find the migration guide here: [Migration Guide](https://evoll.github.io/awg-easy/latest/advanced/migrate/)
 
 ## Installation
 
-This is a quick start guide to get you up and running with WireGuard Easy.
+This is a quick start guide to get you up and running with AmneziaWG Easy.
 
-For a more detailed installation guide, please refer to the [Getting Started](https://wg-easy.github.io/wg-easy/latest/getting-started/) page.
+For a more detailed installation guide, please refer to the [Getting Started](https://evoll.github.io/awg-easy/latest/getting-started/) page.
 
 ### 1. Install Docker
 
@@ -64,15 +87,15 @@ exit
 
 And log in again.
 
-### 2. Run WireGuard Easy
+### 2. Run AmneziaWG Easy
 
-The easiest way to run WireGuard Easy is with Docker Compose.
+The easiest way to run AmneziaWG Easy is with Docker Compose.
 
-Just follow [these steps](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/basic-installation/) in the detailed documentation.
+Just follow [these steps](https://evoll.github.io/awg-easy/latest/examples/tutorials/basic-installation/) in the detailed documentation.
 
-You can also install WireGuard Easy with the [docker run command](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/docker-run/) or via [podman](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/podman-nft/).
+You can also install AmneziaWG Easy with the [docker run command](https://evoll.github.io/awg-easy/latest/examples/tutorials/docker-run/) or via [podman](https://evoll.github.io/awg-easy/latest/examples/tutorials/podman-nft/).
 
-Now [setup a reverse proxy](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/basic-installation/#setup-reverse-proxy) to be able to access the Web UI securely from the internet. This step is optional, just make sure to follow the guide [here](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/reverse-proxyless/) if you decide not to do it.
+Now [setup a reverse proxy](https://evoll.github.io/awg-easy/latest/examples/tutorials/basic-installation/#setup-reverse-proxy) to be able to access the Web UI securely from the internet. This step is optional, just make sure to follow the guide [here](https://evoll.github.io/awg-easy/latest/examples/tutorials/reverse-proxyless/) if you decide not to do it.
 
 ## Donate
 

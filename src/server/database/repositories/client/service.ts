@@ -182,7 +182,7 @@ export class ClientService {
         .execute();
 
       if (!clientInterface) {
-        throw new Error('WireGuard interface not found');
+        throw new Error('AmneziaWG interface not found');
       }
 
       const clientConfig = await tx.query.userConfig
@@ -192,7 +192,7 @@ export class ClientService {
         .execute();
 
       if (!clientConfig) {
-        throw new Error('WireGuard interface configuration not found');
+        throw new Error('AmneziaWG interface configuration not found');
       }
 
       const ipv4Cidr = parseCidr(clientInterface.ipv4Cidr);
@@ -240,7 +240,7 @@ export class ClientService {
         .execute();
 
       if (!clientInterface) {
-        throw new Error('WireGuard interface not found');
+        throw new Error('AmneziaWG interface not found');
       }
 
       if (!containsCidr(clientInterface.ipv4Cidr, data.ipv4Address)) {
