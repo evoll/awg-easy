@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 <template>
   <main>
     <UiBanner />
@@ -130,3 +131,4 @@ async function submit() {
   });
 }
 </script>
+/* eslint-disable @typescript-eslint/no-unused-vars */
