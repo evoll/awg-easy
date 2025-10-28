@@ -21,6 +21,7 @@
           :description="$t('admin.interface.deviceDesc')"
         />
       </FormGroup>
+
       <FormGroup v-if="!data.isUsingAwg">
         <FormHeading>AmneziaWG</FormHeading>
         <p class="text-sm text-muted-foreground col-span-2">
@@ -29,79 +30,82 @@
           and ensure the amneziawg kernel module is available.
         </p>
       </FormGroup>
+
       <FormGroup v-if="data.isUsingAwg">
         <FormHeading>AmneziaWG Obfuscation Parameters</FormHeading>
+
         <FormNumberField
           id="jc"
           v-model="data.jc"
           label="Junk packet count (Jc)"
-          description="Number of junk packets to send (1-128, recommended: 4-12)"
+          description="Number of junk packets to send (1–128, recommended: 4–12)"
         />
         <FormNumberField
           id="jmin"
           v-model="data.jmin"
           label="Junk packet min size (Jmin)"
-          description="Min junk packet size in bytes (0-1279, recommended: 8, must be < Jmax)"
+          description="Min junk packet size in bytes (0–1279, recommended: 8, must be < Jmax)"
         />
         <FormNumberField
           id="jmax"
           v-model="data.jmax"
           label="Junk packet max size (Jmax)"
-          description="Max junk packet size in bytes (1-1280, recommended: 80, must be > Jmin)"
+          description="Max junk packet size in bytes (1–1280, recommended: 80, must be > Jmin)"
         />
         <FormNumberField
           id="s1"
           v-model="data.s1"
           label="Init header junk size (S1)"
-          description="Init packet junk size in bytes (0-1132, recommended: 15-150, S1+56 ≠ S2)"
+          description="Init packet junk size in bytes (0–1132, recommended: 15–150, S1+56 ≠ S2)"
         />
         <FormNumberField
           id="s2"
           v-model="data.s2"
           label="Response header junk size (S2)"
-          description="Response packet junk size in bytes (0-1188, recommended: 15-150)"
+          description="Response packet junk size in bytes (0–1188, recommended: 15–150)"
         />
         <FormNumberField
           id="h1"
           v-model="data.h1"
           label="Init magic header (H1)"
-          description="Init packet header value (>4, must be unique from H2-H4)"
+          description="Init packet header value (>4, must be unique from H2–H4)"
         />
         <FormNumberField
           id="h2"
           v-model="data.h2"
           label="Response magic header (H2)"
-          description="Response packet header value (>4, must be unique from H1,H3,H4)"
+          description="Response packet header value (>4, must be unique from H1, H3, H4)"
         />
         <FormNumberField
           id="h3"
           v-model="data.h3"
           label="Cookie magic header (H3)"
-          description="Cookie packet header value (>4, must be unique from H1,H2,H4)"
+          description="Cookie packet header value (>4, must be unique from H1, H2, H4)"
         />
         <FormNumberField
           id="h4"
           v-model="data.h4"
           label="Transport magic header (H4)"
-          description="Transport packet header value (>4, must be unique from H1-H3)"
+          description="Transport packet header value (>4, must be unique from H1–H3)"
         />
         <FormNumberField
           id="s3"
           v-model="data.s3"
           label="Cookie header junk size (S3)"
-          description="Cookie packet junk size in bytes (0-1132)"
+          description="Cookie packet junk size in bytes (0–1132)"
         />
         <FormNumberField
           id="s4"
           v-model="data.s4"
           label="Transport header junk size (S4)"
-          description="Transport packet junk size in bytes (0-1188)"
+          description="Transport packet junk size in bytes (0–1188)"
         />
+
         <FormTextField
           id="i1"
           v-model="data.i1"
           label="Special junk packet 1 (I1)"
-          description="Protocol mimic packet in hex format: <b 0x...> (QUIC default)"
+          description="Protocol mimic packet in hex format: &lt;b 0x...&gt; (QUIC default)"
         />
         <FormTextField
           id="i2"
@@ -127,6 +131,7 @@
           label="Special junk packet 5 (I5)"
           description="Additional special packet (optional)"
         />
+
         <FormTextField
           id="j1"
           v-model="data.j1"
@@ -145,17 +150,27 @@
           label="Junk packet schedule 3 (J3)"
           description="Scheduling parameter (optional)"
         />
+
         <FormNumberField
           id="itime"
           v-model="data.itime"
           label="Interval time (Itime)"
-          description="Interval time parameter in seconds (0-2147483647, Windows: must be 0)"
+          description="Interval time parameter in seconds (0–2147483647, Windows: must be 0)"
         />
       </FormGroup>
+
       <FormGroup>
         <FormHeading>{{ $t('form.actions') }}</FormHeading>
-        <FormPrimaryActionField type="submit" :label="$t('form.save')" />
-        <FormSecondaryActionField :label="$t('form.revert')" @click="revert" />
+
+        <FormPrimaryActionField
+          type="submit"
+          :label="$t('form.save')"
+        />
+        <FormSecondaryActionField
+          :label="$t('form.revert')"
+          @click="revert"
+        />
+
         <AdminCidrDialog
           trigger-class="col-span-2"
           :ipv4-cidr="data.ipv4Cidr"
@@ -168,6 +183,7 @@
             tabindex="-1"
           />
         </AdminCidrDialog>
+
         <AdminRestartInterfaceDialog
           trigger-class="col-span-2"
           @restart="restartInterface"
@@ -185,75 +201,19 @@
 
 <script setup lang="ts">
 import { ref, watch } from 'vue';
+import { useI18n } from '@/composables/useI18n'; // Уточните путь
+import { useFetch } from '#imports'; // Nuxt auto-imports
+import { useSubmit } from '@/composables/useSubmit'; // Уточните путь
 
 const { t } = useI18n();
 
-// fetch server-side interface data
-const { data: _data, refresh } = await useFetch(`/api/admin/interface`, {
-  method: 'get',
+// Fetch server-side interface data
+const { data: _data, refresh } = await useFetch('/api/admin/interface', {
+  method: 'GET',
 });
 
-// keep a local reactive copy for editing (v-model needs a writable ref)
-const data = ref(_data.value ?? null);
+// Keep a local reactive copy for editing (v-model needs a writable ref)
+const data = ref<InterfaceData | null>(_data.value ?? null);
 
-// keep local copy updated after refresh / when _data changes
-watch(
-  _data,
-  (val) => {
-    data.value = val ?? null;
-  },
-  { immediate: true }
-);
-
-// submit handler (posts the edited data)
-const _submit = useSubmit(
-  `/api/admin/interface`,
-  {
-    method: 'post',
-  },
-  { revert }
-);
-
-function submit() {
-  return _submit(data.value);
-}
-
-// revert — reload server data and overwrite local copy
-async function revert() {
-  await refresh();
-  data.value = _data.value ?? null;
-}
-
-// change CIDR
-const _changeCidr = useSubmit(
-  `/api/admin/interface/cidr`,
-  {
-    method: 'post',
-  },
-  {
-    revert,
-    successMsg: t('admin.interface.cidrSuccess'),
-  }
-);
-
-async function changeCidr(ipv4Cidr: string, ipv6Cidr: string) {
-  await _changeCidr({ ipv4Cidr, ipv6Cidr });
-}
-
-// restart interface
-const _restartInterface = useSubmit(
-  `/api/admin/interface/restart`,
-  {
-    method: 'post',
-  },
-  {
-    revert,
-    successMsg: t('admin.interface.restartSuccess'),
-  }
-);
-
-async function restartInterface() {
-  // call without passing undefined
-  await _restartInterface();
-}
-</script>
+// Update local copy when _data changes
+watch

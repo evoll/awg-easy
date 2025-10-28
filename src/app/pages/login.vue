@@ -2,14 +2,13 @@
   <main>
     <UiBanner />
     <HeaderInsecure />
+
     <form
       class="mx-auto mt-10 flex w-64 flex-col gap-5 overflow-hidden rounded-md bg-white p-5 text-gray-700 shadow dark:bg-neutral-700 dark:text-neutral-200"
       @submit.prevent="submit"
     >
       <!-- Avatar -->
-      <div
-        class="mx-auto mb-5 mt-5 h-20 w-20 overflow-hidden rounded-full bg-red-800 dark:bg-red-800"
-      >
+      <div class="mx-auto mb-5 mt-5 h-20 w-20 overflow-hidden rounded-full bg-red-800 dark:bg-red-800">
         <IconsAvatar class="m-5 h-10 w-10 text-white dark:text-white" />
       </div>
 
@@ -54,12 +53,16 @@
         class="rounded py-2 text-sm text-white shadow transition dark:text-white"
         :class="{
           'cursor-pointer bg-red-800 hover:bg-red-700 dark:bg-red-800 dark:hover:bg-red-700':
-            password && username,
+            password.value && username.value,
           'cursor-not-allowed bg-gray-200 dark:bg-neutral-800':
-            !password || !username,
+            !password.value || !username.value,
         }"
+        :disabled="!password.value || !username.value || authenticating.value"
       >
-        <IconsLoading v-if="authenticating" class="mx-auto w-5 animate-spin" />
+        <IconsLoading
+          v-if="authenticating.value"
+          class="mx-auto w-5 animate-spin"
+        />
         <span v-else>{{ $t('login.signIn') }}</span>
       </button>
     </form>
@@ -67,6 +70,12 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+import { useAuthStore } from '@/stores/auth'; // Уточните путь
+import { useToast } from '@/composables/useToast'; // Уточните путь
+import { useI18n } from '@/composables/useI18n'; // Уточните путь
+import { useSubmit } from '@/composables/useSubmit'; // Уточните путь
+
 const authStore = useAuthStore();
 authStore.update();
 
@@ -83,7 +92,7 @@ const totp = ref<string>('');
 const _submit = useSubmit(
   '/api/session',
   {
-    method: 'post',
+    method: 'POST',
   },
   {
     revert: async (success, data) => {
@@ -119,6 +128,7 @@ const _submit = useSubmit(
 
 async function submit() {
   if (!username.value || !password.value || authenticating.value) return;
+
 
   authenticating.value = true;
 
