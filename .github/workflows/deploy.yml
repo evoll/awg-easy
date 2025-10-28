@@ -6,6 +6,9 @@ on:
     tags:
       - "v*"
 
+# This workflow does not support fixing old versions
+# as this will break the latest and major tags
+
 jobs:
   docker-build:
     name: Build Docker
