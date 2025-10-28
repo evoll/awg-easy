@@ -128,6 +128,7 @@ jobs:
           flavor: |
             latest=false
           tags: |
+            type=ref,event=tag,pattern=^V?(\d+\.\d+\.\d+)$  # Удаляет V, если есть
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}
             type=semver,pattern={{major}}.{{minor}}
