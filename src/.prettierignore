@@ -3,3 +3,7 @@ server/database/migrations/meta
 app/pages
 app/composables
 app/utils
+server/api/interface.get.ts
+server/database/repositories/interface
+server/database
+server/utils
