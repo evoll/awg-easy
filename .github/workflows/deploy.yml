@@ -37,13 +37,15 @@ jobs:
           echo "PLATFORM_PAIR=${platform//\//-}" >> $GITHUB_ENV
 
       - name: Docker meta
+      - uses: docker/metadata-action@v4
         id: meta
-        uses: docker/metadata-action@v5
         with:
-          images: |
-            ghcr.io/evoll/awg-easy
-          flavor: |
-            latest=false
+          images: ghcr.io/evoll/awg-easy
+          tags: |
+            type=ref,event=branch
+            type=ref,event=tag
+            type=sha
+            type=raw,value=latest
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
