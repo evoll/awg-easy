@@ -10,7 +10,7 @@ The Docker image includes two AmneziaWG components:
 1. **amneziawg-tools** (`awg`, `awg-quick`) - Command-line tools for managing AmneziaWG
 2. **amneziawg.ko** - Pre-compiled kernel module for Alpine LTS kernel 6.12.50
 
- Kernel Module Compatibility
+### Kernel Module Compatibility
 
 The included kernel module is **pre-built for Alpine Linux LTS kernel 6.12.50**. This matches the kernel used after running the bare-metal installation script which upgrades from `-virt` to `linux-lts`.
 
@@ -42,16 +42,16 @@ services:
         image: awg-easy
         container_name: awg-easy
         environment:
-            - EXPERIMENTAL_AWG=true
+        - EXPERIMENTAL_AWG=true
         volumes:
-            - ./data:/etc/wireguard
+        - ./data:/etc/wireguard
         cap_add:
-            - NET_ADMIN
-            - SYS_MODULE
+        - NET_ADMIN
+        - SYS_MODULE
         privileged: true
         ports:
-            - '51820:51820/udp'
-            - '51821:51821/tcp'
+        - '51820:51820/udp'
+        - '51821:51821/tcp'
 ```
 
 ## Verification
@@ -133,7 +133,7 @@ Running with `privileged: true` grants the container significant host access. Co
 3. Pin to specific image versions in production
 4. Monitor container behavior
 
- Performance
+### Performance
 
 **Kernel Module Advantages:**
 
