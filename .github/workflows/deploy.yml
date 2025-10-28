@@ -6,9 +6,6 @@ on:
     tags:
       - "v*"
 
-# This workflow does not support fixing old versions
-# as this will break the latest and major tags
-
 jobs:
   docker-build:
     name: Build Docker
@@ -40,10 +37,19 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: |
-            ghcr.io/evoll/awg-easy
-          flavor: |
-            latest=false
+          images: ghcr.io/evoll/awg-easy
+          tags: |
+            type=ref,event=tag,pattern=^v?(\d+\.\d+\.\d+)$  # Удаляет префикс 'v'
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=raw,value=latest
+          flavor: latest=false
+
+      - name: Debug metadata
+        run: |
+          echo "Generated tags: ${{ steps.meta.outputs.tags }}"
+          echo "Labels: ${{ steps.meta.outputs.labels }}"
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
@@ -56,7 +62,7 @@ jobs:
         uses: docker/setup-qemu-action@v3
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@v4
 
       - name: Build and push by digest
         id: build
@@ -65,7 +71,7 @@ jobs:
           context: .
           platforms: ${{ matrix.arch.platform }}
           labels: ${{ steps.meta.outputs.labels }}
-          tags: ghcr.io/evoll/awg-easy
+          tags: ${{ steps.meta.outputs.tags }}
           outputs: type=image,push-by-digest=true,name-canonical=true,push=true
           cache-from: type=gha,scope=build-${{ env.PLATFORM_PAIR }}
           cache-to: type=gha,mode=min,scope=build-${{ env.PLATFORM_PAIR }}
@@ -101,12 +107,20 @@ jobs:
           pattern: digests-*
           merge-multiple: true
 
+      - name: Validate digests
+        run: |
+          if [ -z "$(ls -A ${{ runner.temp }}/digests)" ]; then
+            echo "No digest files found!"
+            exit 1
+          fi
+
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
 
       - name: Login to Codeberg
         uses: docker/login-action@v3
@@ -116,27 +130,35 @@ jobs:
           password: ${{ secrets.CODEBERG_PASS }}
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@v4
 
-      - name: Docker meta
+      - name: Docker meta (for merge)
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: |
             ghcr.io/evoll/awg-easy
             codeberg.org/evoll/awg-easy
-          flavor: |
-            latest=false
           tags: |
+            type=ref,event=tag,pattern=^v?(\d+\.\d+\.\d+)$
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}
             type=semver,pattern={{major}}.{{minor}}
+            type=raw,value=latest
+          flavor: latest=false
 
       - name: Create manifest list and push
-        working-directory: ${{ runner.temp }}/digests
         run: |
-          docker buildx imagetools create $(jq -cr '.tags | map("-t " + .) | join(" ")' <<< "$DOCKER_METADATA_OUTPUT_JSON") \
-            $(printf 'ghcr.io/evoll/awg-easy@sha256:%s ' *)
+          # Собираем все digest-файлы
+          DIGESTS=$(find ${{ runner.temp }}/digests -type f -name "*" -printf "%f " | tr -d '\n')
+          
+          # Формируем теги из метаданных
+          TAGS=$(echo '${{ steps.meta.outputs.tags }}' | tr ',' '\n')
+          
+          for tag in $TAGS; do
+            docker buildx imagetools create --tag "$tag" \
+              $(printf 'ghcr.io/evoll/awg-easy@sha256:%s ' $DIGESTS)
+          done
 
       - name: Inspect image
         run: |
