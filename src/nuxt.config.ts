@@ -24,14 +24,8 @@ export default defineNuxtConfig({
   },
   i18n: {
     // https://i18n.nuxtjs.org/docs/guide/server-side-translations
-    // Disabled experimental locale detector to prevent deepCopy errors
-    // experimental: {
-    //   localeDetector: './localeDetector.ts',
-    // },
-    // Disable compilation to prevent build-time locale merging issues
-    compilation: {
-      strictMessage: false,
-      escapeHtml: false,
+    experimental: {
+      localeDetector: './localeDetector.ts',
     },
     // https://evoll.github.io/awg-easy/latest/contributing/translation/
     locales: [
@@ -118,12 +112,7 @@ export default defineNuxtConfig({
     strategy: 'no_prefix',
     detectBrowserLanguage: {
       useCookie: true,
-      fallbackLocale: 'en',
-      // Disable redirect to prevent locale switching during SSR
-      redirectOn: 'root',
     },
-    // Disable lazy loading to prevent runtime locale merging issues
-    // lazy: false,
   },
   nitro: {
     esbuild: {

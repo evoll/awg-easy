@@ -1,6 +1,6 @@
 {
   "name": "awg-easy",
-  "version": "15.0.0",
+  "version": "15.1.0",
   "description": "The easiest way to run AmneziaWG VPN + Web-based Admin UI.",
   "private": true,
   "type": "module",
