@@ -12,13 +12,13 @@
         <meta name="author" content="AmneziaWG Easy">
       
       
-        <link rel="canonical" href="https://evoll.github.io/awg-easy/v15.1/advanced/metrics/prometheus/">
+        <link rel="canonical" href="https://evoll.github.io/awg-easy/v15.1/advanced/config/amneziawg-kernel-module/">
       
       
-        <link rel="prev" href="../../config/unattended-setup/">
+        <link rel="prev" href="../amnezia/">
       
       
-        <link rel="next" href="../../migrate/">
+        <link rel="next" href="../experimental-config/">
       
       
       <link rel="icon" href="../../../assets/logo/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Prometheus - awg-easy</title>
+        <title>Amneziawg kernel module - awg-easy</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enable-prometheus" class="md-skip">
+        <a href="#title-amneziawg-kernel-module" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Prometheus
+              Amneziawg kernel module
             
           </span>
         </div>
@@ -552,8 +552,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -562,13 +564,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
         
           
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -584,7 +584,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             Config
@@ -598,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../config/amnezia/" class="md-nav__link">
+      <a href="../amnezia/" class="md-nav__link">
         
   
   
@@ -618,10 +618,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../config/amneziawg-kernel-module/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Amneziawg kernel module
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -632,6 +652,252 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#title-amneziawg-kernel-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      title: AmneziaWG Kernel Module
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amneziawg-kernel-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      AmneziaWG Kernel Module
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AmneziaWG Kernel Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kernel-module-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel Module Compatibility
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kernel Module Compatibility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Configurations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-configuration-alpine-lts-61250" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Configuration (Alpine LTS 6.12.50)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-kernel-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Kernel Version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-which-implementation-is-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Which Implementation is Active
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-application-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Application Logs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fallback-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fallback Behavior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kernel-version-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel Version Mismatch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-wont-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Won’t Load
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-module-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify Module File
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Considerations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Documentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -644,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../config/experimental-config/" class="md-nav__link">
+      <a href="../experimental-config/" class="md-nav__link">
         
   
   
@@ -667,7 +933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../config/optional-config/" class="md-nav__link">
+      <a href="../optional-config/" class="md-nav__link">
         
   
   
@@ -690,7 +956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../config/unattended-setup/" class="md-nav__link">
+      <a href="../unattended-setup/" class="md-nav__link">
         
   
   
@@ -718,8 +984,6 @@
                 
   
   
-    
-  
   
   
     
@@ -730,11 +994,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -750,7 +1016,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             Metrics
@@ -761,30 +1027,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Prometheus
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../metrics/prometheus/" class="md-nav__link">
         
   
   
@@ -795,51 +1041,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#enable-prometheus" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enable Prometheus
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-prometheus" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configure Prometheus
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grafana-dashboard" class="md-nav__link">
-    <span class="md-ellipsis">
-      Grafana Dashboard
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1643,29 +1844,230 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enable-prometheus" class="md-nav__link">
+  <a href="#title-amneziawg-kernel-module" class="md-nav__link">
     <span class="md-ellipsis">
-      Enable Prometheus
+      title: AmneziaWG Kernel Module
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-prometheus" class="md-nav__link">
+  <a href="#amneziawg-kernel-module" class="md-nav__link">
     <span class="md-ellipsis">
-      Configure Prometheus
+      AmneziaWG Kernel Module
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AmneziaWG Kernel Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#grafana-dashboard" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-details" class="md-nav__link">
     <span class="md-ellipsis">
-      Grafana Dashboard
+      Implementation Details
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kernel-module-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel Module Compatibility
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kernel Module Compatibility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Configurations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-configuration-alpine-lts-61250" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Configuration (Alpine LTS 6.12.50)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-kernel-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Kernel Version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-which-implementation-is-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Which Implementation is Active
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-application-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Application Logs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fallback-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fallback Behavior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kernel-version-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel Version Mismatch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-wont-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Won’t Load
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-module-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify Module File
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Considerations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Documentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1685,7 +2087,7 @@
 
 
   
-    <a href="https://github.com/evoll/awg-easy/edit/main/docs/content/advanced/metrics/prometheus.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/evoll/awg-easy/edit/main/docs/content/advanced/config/amneziawg-kernel-module.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1694,50 +2096,179 @@
     
       
     
-    <a href="https://github.com/evoll/awg-easy/raw/main/docs/content/advanced/metrics/prometheus.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/evoll/awg-easy/raw/main/docs/content/advanced/config/amneziawg-kernel-module.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-  <h1>Prometheus</h1>
-
-<p>To monitor the WireGuard server, you can use <a href="https://prometheus.io/">Prometheus</a> and <a href="https://grafana.com/">Grafana</a>. The container exposes a <code>/metrics/prometheus</code> endpoint that can be scraped by Prometheus.</p>
-<h2 id="enable-prometheus"><a class="toclink" href="#enable-prometheus">Enable Prometheus</a></h2>
-<p>To enable Prometheus metrics, go to Admin Panel &gt; General and enable Prometheus.</p>
-<p>You can optionally set a Bearer Password for the metrics endpoints. This is useful if you want to expose the metrics endpoint to the internet.</p>
-<h2 id="configure-prometheus"><a class="toclink" href="#configure-prometheus">Configure Prometheus</a></h2>
-<p>You need to add a scrape config to your Prometheus configuration file. Here is an example:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">scrape_configs</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">job_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;awg-easy&#39;</span>
-<span class="w">      </span><span class="nt">scrape_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30s</span>
-<span class="w">      </span><span class="nt">metrics_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/metrics/prometheus</span>
-<span class="w">      </span><span class="nt">static_configs</span><span class="p">:</span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">targets</span><span class="p">:</span>
-<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;localhost:51821&#39;</span>
-<span class="w">      </span><span class="nt">authorization</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bearer</span>
-<span class="w">          </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;SuperSecurePassword&#39;</span>
+<hr />
+<h2 id="title-amneziawg-kernel-module"><a class="toclink" href="#title-amneziawg-kernel-module">title: AmneziaWG Kernel Module</a></h2>
+<h1 id="amneziawg-kernel-module"><a class="toclink" href="#amneziawg-kernel-module">AmneziaWG Kernel Module</a></h1>
+<h2 id="overview"><a class="toclink" href="#overview">Overview</a></h2>
+<p>This build includes support for the <strong>AmneziaWG kernel module</strong>, pre-built for Alpine Linux LTS kernel (6.12.50). The kernel module provides better performance than the userspace implementation.</p>
+<h2 id="implementation-details"><a class="toclink" href="#implementation-details">Implementation Details</a></h2>
+<p>The Docker image includes two AmneziaWG components:</p>
+<ol>
+<li><strong>amneziawg-tools</strong> (<code>awg</code>, <code>awg-quick</code>) - Command-line tools for managing AmneziaWG</li>
+<li><strong>amneziawg.ko</strong> - Pre-compiled kernel module for Alpine LTS kernel 6.12.50</li>
+</ol>
+<h2 id="kernel-module-compatibility"><a class="toclink" href="#kernel-module-compatibility">Kernel Module Compatibility</a></h2>
+<p>The included kernel module is <strong>pre-built for Alpine Linux LTS kernel 6.12.50</strong>. This matches the kernel used after running the bare-metal installation script which upgrades from <code>-virt</code> to <code>linux-lts</code>.</p>
+<h3 id="supported-configurations"><a class="toclink" href="#supported-configurations">Supported Configurations</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ <strong>Supported</strong></td>
+<td>Alpine Linux with <code>linux-lts</code> kernel (6.12.50)</td>
+</tr>
+<tr>
+<td>✅ <strong>Supported</strong></td>
+<td>Hosts upgraded via the bare-metal install script</td>
+</tr>
+<tr>
+<td>⚠️ <strong>Limited Support</strong></td>
+<td>Other kernel versions (will fall back to userspace)</td>
+</tr>
+<tr>
+<td>⚠️ <strong>Limited Support</strong></td>
+<td>Non-Alpine distributions (userspace only)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="automatic-detection"><a class="toclink" href="#automatic-detection">Automatic Detection</a></h2>
+<p>When <code>EXPERIMENTAL_AWG=true</code>, the system will:</p>
+<ol>
+<li>Check if kernel version matches the pre-built module (6.12.50)</li>
+<li>If match: Load the AmneziaWG kernel module</li>
+<li>If mismatch: Fall back to AmneziaWG userspace</li>
+<li>Respect <code>OVERRIDE_AUTO_AWG</code> to force specific implementation</li>
+</ol>
+<h2 id="usage"><a class="toclink" href="#usage">Usage</a></h2>
+<h3 id="standard-configuration-alpine-lts-61250"><a class="toclink" href="#standard-configuration-alpine-lts-61250">Standard Configuration (Alpine LTS 6.12.50)</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">awg-easy</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">awg-easy</span>
+<span class="w">        </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">awg-easy</span>
+<span class="w">        </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPERIMENTAL_AWG=true</span>
+<span class="w">        </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/etc/wireguard</span>
+<span class="w">        </span><span class="nt">cap_add</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NET_ADMIN</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SYS_MODULE</span>
+<span class="w">        </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;51820:51820/udp&#39;</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;51821:51821/tcp&#39;</span>
 </code></pre></div>
-<h2 id="grafana-dashboard"><a class="toclink" href="#grafana-dashboard">Grafana Dashboard</a></h2>
-<p>You can use the following Grafana dashboard to visualize the metrics:</p>
-<p><a href="https://grafana.com/grafana/dashboards/21733-wireguard/"><img alt="Grafana Dashboard" src="https://grafana.com/api/dashboards/21733/images/16863/image" /></a></p>
-<p><a href="https://grafana.com/grafana/dashboards/21733-wireguard/">21733</a></p>
-<div class="admonition note">
-<p class="admonition-title">Unofficial</p>
-<p>The Grafana dashboard is not official and is not maintained by the <code>wg-easy</code> team. If you have any issues with the dashboard, please contact the author of the dashboard.
-See <a href="https://github.com/wg-easy/wg-easy/pull/1299">#1299</a> for more information.</p>
-</div>
+<h2 id="verification"><a class="toclink" href="#verification">Verification</a></h2>
+<h3 id="check-kernel-version"><a class="toclink" href="#check-kernel-version">Check Kernel Version</a></h3>
+<p>First, verify your host is running the compatible kernel:</p>
+<div class="highlight"><pre><span></span><code>uname<span class="w"> </span>-r
+</code></pre></div>
+<p>Expected output for kernel module support:</p>
+<p><code>6.12.50-0-lts</code></p>
+<h3 id="check-which-implementation-is-active"><a class="toclink" href="#check-which-implementation-is-active">Check Which Implementation is Active</a></h3>
+<p>Check if kernel module is loaded</p>
+<div class="highlight"><pre><span></span><code>lsmod<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;amneziawg|wireguard&#39;</span>
+</code></pre></div>
+<p><strong>AmneziaWG mode:</strong> You’ll see <code>amneziawg</code> in output</p>
+<p><strong>Standard WireGuard mode:</strong> You’ll see <code>wireguard</code> in output</p>
+<h3 id="check-application-logs"><a class="toclink" href="#check-application-logs">Check Application Logs</a></h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>logs<span class="w"> </span>awg-easy<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>amnezia
+</code></pre></div>
+<h2 id="fallback-behavior"><a class="toclink" href="#fallback-behavior">Fallback Behavior</a></h2>
+<p>The system automatically chooses the best available implementation:</p>
+<ol>
+<li><strong>Kernel module</strong> (if host kernel == 6.12.50)</li>
+<li><strong>amneziawg-go userspace</strong> (all other cases)</li>
+<li><strong>Standard WireGuard</strong> (if <code>OVERRIDE_AUTO_AWG=wg</code>)</li>
+</ol>
+<h2 id="troubleshooting"><a class="toclink" href="#troubleshooting">Troubleshooting</a></h2>
+<h3 id="kernel-version-mismatch"><a class="toclink" href="#kernel-version-mismatch">Kernel Version Mismatch</a></h3>
+<p>If you’re not running Alpine LTS kernel 6.12.50, the system will automatically use AmneziaWG userspace. To force standard WireGuard:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">environment</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OVERRIDE_AUTO_AWG=wg</span><span class="w"> </span><span class="c1"># Force standard WireGuard</span>
+</code></pre></div>
+<h3 id="module-wont-load"><a class="toclink" href="#module-wont-load">Module Won’t Load</a></h3>
+<p>Ensure you have the required capabilities:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">cap_add</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SYS_MODULE</span>
+<span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<h3 id="verify-module-file"><a class="toclink" href="#verify-module-file">Verify Module File</a></h3>
+<p>Check if the pre-built module is present:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>awg-easy<span class="w"> </span>ls<span class="w"> </span>-la<span class="w"> </span>/lib/modules/
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>awg-easy<span class="w"> </span>cat<span class="w"> </span>/etc/amneziawg-kernel-version.txt
+</code></pre></div>
+<h2 id="security-considerations"><a class="toclink" href="#security-considerations">Security Considerations</a></h2>
+<p>Running with <code>privileged: true</code> grants the container significant host access. Consider:</p>
+<ol>
+<li>Use <code>cap_add</code> with specific capabilities instead of <code>privileged</code> when possible</li>
+<li>Audit the kernel module source before building</li>
+<li>Pin to specific image versions in production</li>
+<li>Monitor container behavior</li>
+</ol>
+<h2 id="performance"><a class="toclink" href="#performance">Performance</a></h2>
+<p><strong>Kernel Module Advantages:</strong></p>
+<ul>
+<li>Lower CPU usage (10-30% improvement)</li>
+<li>Better throughput on high-speed networks</li>
+<li>Native kernel integration</li>
+</ul>
+<p><strong>Userspace Advantages:</strong></p>
+<ul>
+<li>No kernel dependencies</li>
+<li>Easier deployment</li>
+<li>Better isolation</li>
+</ul>
+<p>For most users, the <strong>userspace implementation is sufficient</strong>. Use the kernel module if:</p>
+<ul>
+<li>You have high throughput requirements (&gt;500 Mbps)</li>
+<li>CPU usage is a concern</li>
+<li>You’re already running privileged containers</li>
+</ul>
+<h2 id="environment-variables"><a class="toclink" href="#environment-variables">Environment Variables</a></h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EXPERIMENTAL_AWG</code></td>
+<td><code>false</code></td>
+<td>Enable AmneziaWG support</td>
+</tr>
+<tr>
+<td><code>OVERRIDE_AUTO_AWG</code></td>
+<td><code>undefined</code></td>
+<td>Force <code>awg</code> or <code>wg</code> implementation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-documentation"><a class="toclink" href="#related-documentation">Related Documentation</a></h2>
+<ul>
+<li>AmneziaWG Configuration</li>
+<li>Experimental Features</li>
+</ul>
 
 
 
 
 
 
-
-  
-  
 
 
 

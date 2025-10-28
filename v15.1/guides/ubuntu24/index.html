@@ -12,28 +12,28 @@
         <meta name="author" content="AmneziaWG Easy">
       
       
-        <link rel="canonical" href="https://evoll.github.io/awg-easy/v15.1/advanced/metrics/prometheus/">
+        <link rel="canonical" href="https://evoll.github.io/awg-easy/v15.1/guides/ubuntu24/">
       
       
-        <link rel="prev" href="../../config/unattended-setup/">
+        <link rel="prev" href="../setup/">
       
       
-        <link rel="next" href="../../migrate/">
+        <link rel="next" href="../ubuntu24ru/">
       
       
-      <link rel="icon" href="../../../assets/logo/favicon.png">
+      <link rel="icon" href="../../assets/logo/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>Prometheus - awg-easy</title>
+        <title>Ubuntu 24.x Install AmneziaWG Linux Kernel Module - awg-easy</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enable-prometheus" class="md-skip">
+        <a href="#install-amneziawg-kernel-module-on-ubuntu-24x" class="md-skip">
           Skip to content
         </a>
       
@@ -96,9 +96,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="awg-easy" class="md-header__button md-logo" aria-label="awg-easy" data-md-component="logo">
+    <a href="../.." title="awg-easy" class="md-header__button md-logo" aria-label="awg-easy" data-md-component="logo">
       
-  <img src="../../../assets/logo/logo.png" alt="logo">
+  <img src="../../assets/logo/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Prometheus
+              Ubuntu 24.x Install AmneziaWG Linux Kernel Module
             
           </span>
         </div>
@@ -226,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -245,7 +245,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../faq/" class="md-tabs__link">
+      <a href="../../faq/" class="md-tabs__link">
         
   
   
@@ -264,7 +264,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../getting-started/" class="md-tabs__link">
+      <a href="../../getting-started/" class="md-tabs__link">
         
   
   
@@ -281,13 +281,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../api/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../advanced/api/" class="md-tabs__link">
           
   
   
@@ -307,7 +305,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../contributing/general/" class="md-tabs__link">
+        <a href="../../contributing/general/" class="md-tabs__link">
           
   
   
@@ -334,7 +332,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../examples/tutorials/adguard/" class="md-tabs__link">
+        <a href="../../examples/tutorials/adguard/" class="md-tabs__link">
           
   
   
@@ -353,11 +351,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../guides/2fa/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../2fa/" class="md-tabs__link">
           
   
   
@@ -380,7 +380,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -391,9 +393,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="awg-easy" class="md-nav__button md-logo" aria-label="awg-easy" data-md-component="logo">
+    <a href="../.." title="awg-easy" class="md-nav__button md-logo" aria-label="awg-easy" data-md-component="logo">
       
-  <img src="../../../assets/logo/logo.png" alt="logo">
+  <img src="../../assets/logo/logo.png" alt="logo">
 
     </a>
     awg-easy
@@ -420,7 +422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -442,7 +444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../faq/" class="md-nav__link">
+      <a href="../../faq/" class="md-nav__link">
         
   
   
@@ -464,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/" class="md-nav__link">
+      <a href="../../getting-started/" class="md-nav__link">
         
   
   
@@ -483,29 +485,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
@@ -518,7 +517,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Advanced
@@ -532,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/" class="md-nav__link">
+      <a href="../../advanced/api/" class="md-nav__link">
         
   
   
@@ -598,7 +597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../config/amnezia/" class="md-nav__link">
+      <a href="../../advanced/config/amnezia/" class="md-nav__link">
         
   
   
@@ -621,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../config/amneziawg-kernel-module/" class="md-nav__link">
+      <a href="../../advanced/config/amneziawg-kernel-module/" class="md-nav__link">
         
   
   
@@ -644,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../config/experimental-config/" class="md-nav__link">
+      <a href="../../advanced/config/experimental-config/" class="md-nav__link">
         
   
   
@@ -667,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../config/optional-config/" class="md-nav__link">
+      <a href="../../advanced/config/optional-config/" class="md-nav__link">
         
   
   
@@ -690,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../config/unattended-setup/" class="md-nav__link">
+      <a href="../../advanced/config/unattended-setup/" class="md-nav__link">
         
   
   
@@ -718,8 +717,6 @@
                 
   
   
-    
-  
   
   
     
@@ -730,11 +727,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -750,7 +749,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             Metrics
@@ -761,30 +760,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Prometheus
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../advanced/metrics/prometheus/" class="md-nav__link">
         
   
   
@@ -795,51 +774,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#enable-prometheus" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enable Prometheus
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-prometheus" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configure Prometheus
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grafana-dashboard" class="md-nav__link">
-    <span class="md-ellipsis">
-      Grafana Dashboard
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -903,7 +837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../migrate/" class="md-nav__link">
+      <a href="../../advanced/migrate/" class="md-nav__link">
         
   
   
@@ -926,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../migrate/from-14-to-15/" class="md-nav__link">
+      <a href="../../advanced/migrate/from-14-to-15/" class="md-nav__link">
         
   
   
@@ -1007,7 +941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/general/" class="md-nav__link">
+      <a href="../../contributing/general/" class="md-nav__link">
         
   
   
@@ -1030,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/issues-and-pull-requests/" class="md-nav__link">
+      <a href="../../contributing/issues-and-pull-requests/" class="md-nav__link">
         
   
   
@@ -1053,7 +987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/translation/" class="md-nav__link">
+      <a href="../../contributing/translation/" class="md-nav__link">
         
   
   
@@ -1169,7 +1103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/adguard/" class="md-nav__link">
+      <a href="../../examples/tutorials/adguard/" class="md-nav__link">
         
   
   
@@ -1192,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/auto-updates/" class="md-nav__link">
+      <a href="../../examples/tutorials/auto-updates/" class="md-nav__link">
         
   
   
@@ -1215,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/basic-installation/" class="md-nav__link">
+      <a href="../../examples/tutorials/basic-installation/" class="md-nav__link">
         
   
   
@@ -1238,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/caddy/" class="md-nav__link">
+      <a href="../../examples/tutorials/caddy/" class="md-nav__link">
         
   
   
@@ -1261,7 +1195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/docker-run/" class="md-nav__link">
+      <a href="../../examples/tutorials/docker-run/" class="md-nav__link">
         
   
   
@@ -1284,7 +1218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/dockerless/" class="md-nav__link">
+      <a href="../../examples/tutorials/dockerless/" class="md-nav__link">
         
   
   
@@ -1307,7 +1241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/podman-nft/" class="md-nav__link">
+      <a href="../../examples/tutorials/podman-nft/" class="md-nav__link">
         
   
   
@@ -1330,7 +1264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/reverse-proxyless/" class="md-nav__link">
+      <a href="../../examples/tutorials/reverse-proxyless/" class="md-nav__link">
         
   
   
@@ -1353,7 +1287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/routed/" class="md-nav__link">
+      <a href="../../examples/tutorials/routed/" class="md-nav__link">
         
   
   
@@ -1376,7 +1310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/traefik/" class="md-nav__link">
+      <a href="../../examples/tutorials/traefik/" class="md-nav__link">
         
   
   
@@ -1411,26 +1345,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -1443,7 +1380,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Guides
@@ -1457,7 +1394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/2fa/" class="md-nav__link">
+      <a href="../2fa/" class="md-nav__link">
         
   
   
@@ -1480,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/admin/" class="md-nav__link">
+      <a href="../admin/" class="md-nav__link">
         
   
   
@@ -1503,7 +1440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/cli/" class="md-nav__link">
+      <a href="../cli/" class="md-nav__link">
         
   
   
@@ -1526,7 +1463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/clients/" class="md-nav__link">
+      <a href="../clients/" class="md-nav__link">
         
   
   
@@ -1549,7 +1486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/setup/" class="md-nav__link">
+      <a href="../setup/" class="md-nav__link">
         
   
   
@@ -1569,10 +1506,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../guides/ubuntu24/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Ubuntu 24.x Install AmneziaWG Linux Kernel Module
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1583,6 +1542,137 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Links
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instructions-to-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instructions to install
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instructions to install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-update-the-system-to-the-latest-package-versions-including-the-latest-available-kernel-version-by-running-the-following-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Update the system to the latest package versions, including the latest available kernel version, by running the following commands:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-install-docker-if-not-already-installed" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Install Docker if not already installed:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-make-sure-that-you-have-configured-the-source-repositories-for-apt-run-nano-etcaptsourceslistdubuntusources-and-make-sure-that-there-is-at-least-one-line-starting-with-deb-src-and-containing-no-comments-if-not-then-add-deb-src-after-deb-approximate-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Make sure that you have configured the source repositories for APT. Run nano /etc/apt/sources.list.d/ubuntu.sources and make sure that there is at least one line starting with deb-src and containing no comments. If not, then add "deb-src" after "deb". Approximate view:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-the-sourceslist5-manual-page-for-further-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      See the sources.list(5) manual page for further settings.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubuntu-security-updates-aside-from-uris-and-suites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ubuntu security updates. Aside from URIs and Suites,
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#this-should-mirror-your-choices-in-the-previous-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      this should mirror your choices in the previous section.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="this should mirror your choices in the previous section.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-set-the-prerequisites-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Set the prerequisites — run:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-according-to-the-instructions-httpsgithubcomamnezia-vpnamneziawg-linux-kernel-moduleissues91-you-need-to-download-install-and-compile-the-correct-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. According to the instructions https://github.com/amnezia-vpn/amneziawg-linux-kernel-module/issues/91 you need to download, install and compile the correct modules:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-deploy-amnesia-on-a-docker-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Deploy Amnesia on a Docker server:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1595,7 +1685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/ubuntu24ru/" class="md-nav__link">
+      <a href="../ubuntu24ru/" class="md-nav__link">
         
   
   
@@ -1626,6 +1716,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1635,6 +1727,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1643,29 +1737,113 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enable-prometheus" class="md-nav__link">
+  <a href="#links" class="md-nav__link">
     <span class="md-ellipsis">
-      Enable Prometheus
+      Links
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-prometheus" class="md-nav__link">
+  <a href="#instructions-to-install" class="md-nav__link">
     <span class="md-ellipsis">
-      Configure Prometheus
+      Instructions to install
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instructions to install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-update-the-system-to-the-latest-package-versions-including-the-latest-available-kernel-version-by-running-the-following-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Update the system to the latest package versions, including the latest available kernel version, by running the following commands:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-install-docker-if-not-already-installed" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Install Docker if not already installed:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-make-sure-that-you-have-configured-the-source-repositories-for-apt-run-nano-etcaptsourceslistdubuntusources-and-make-sure-that-there-is-at-least-one-line-starting-with-deb-src-and-containing-no-comments-if-not-then-add-deb-src-after-deb-approximate-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Make sure that you have configured the source repositories for APT. Run nano /etc/apt/sources.list.d/ubuntu.sources and make sure that there is at least one line starting with deb-src and containing no comments. If not, then add "deb-src" after "deb". Approximate view:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-the-sourceslist5-manual-page-for-further-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      See the sources.list(5) manual page for further settings.
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#grafana-dashboard" class="md-nav__link">
+  <a href="#ubuntu-security-updates-aside-from-uris-and-suites" class="md-nav__link">
     <span class="md-ellipsis">
-      Grafana Dashboard
+      Ubuntu security updates. Aside from URIs and Suites,
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#this-should-mirror-your-choices-in-the-previous-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      this should mirror your choices in the previous section.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="this should mirror your choices in the previous section.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-set-the-prerequisites-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Set the prerequisites — run:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-according-to-the-instructions-httpsgithubcomamnezia-vpnamneziawg-linux-kernel-moduleissues91-you-need-to-download-install-and-compile-the-correct-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. According to the instructions https://github.com/amnezia-vpn/amneziawg-linux-kernel-module/issues/91 you need to download, install and compile the correct modules:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-deploy-amnesia-on-a-docker-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Deploy Amnesia on a Docker server:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1682,10 +1860,12 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+
 
 
   
-    <a href="https://github.com/evoll/awg-easy/edit/main/docs/content/advanced/metrics/prometheus.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/evoll/awg-easy/edit/main/docs/content/guides/ubuntu24.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1694,41 +1874,91 @@
     
       
     
-    <a href="https://github.com/evoll/awg-easy/raw/main/docs/content/advanced/metrics/prometheus.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/evoll/awg-easy/raw/main/docs/content/guides/ubuntu24.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-  <h1>Prometheus</h1>
-
-<p>To monitor the WireGuard server, you can use <a href="https://prometheus.io/">Prometheus</a> and <a href="https://grafana.com/">Grafana</a>. The container exposes a <code>/metrics/prometheus</code> endpoint that can be scraped by Prometheus.</p>
-<h2 id="enable-prometheus"><a class="toclink" href="#enable-prometheus">Enable Prometheus</a></h2>
-<p>To enable Prometheus metrics, go to Admin Panel &gt; General and enable Prometheus.</p>
-<p>You can optionally set a Bearer Password for the metrics endpoints. This is useful if you want to expose the metrics endpoint to the internet.</p>
-<h2 id="configure-prometheus"><a class="toclink" href="#configure-prometheus">Configure Prometheus</a></h2>
-<p>You need to add a scrape config to your Prometheus configuration file. Here is an example:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">scrape_configs</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">job_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;awg-easy&#39;</span>
-<span class="w">      </span><span class="nt">scrape_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30s</span>
-<span class="w">      </span><span class="nt">metrics_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/metrics/prometheus</span>
-<span class="w">      </span><span class="nt">static_configs</span><span class="p">:</span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">targets</span><span class="p">:</span>
-<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;localhost:51821&#39;</span>
-<span class="w">      </span><span class="nt">authorization</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bearer</span>
-<span class="w">          </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;SuperSecurePassword&#39;</span>
-</code></pre></div>
-<h2 id="grafana-dashboard"><a class="toclink" href="#grafana-dashboard">Grafana Dashboard</a></h2>
-<p>You can use the following Grafana dashboard to visualize the metrics:</p>
-<p><a href="https://grafana.com/grafana/dashboards/21733-wireguard/"><img alt="Grafana Dashboard" src="https://grafana.com/api/dashboards/21733/images/16863/image" /></a></p>
-<p><a href="https://grafana.com/grafana/dashboards/21733-wireguard/">21733</a></p>
-<div class="admonition note">
-<p class="admonition-title">Unofficial</p>
-<p>The Grafana dashboard is not official and is not maintained by the <code>wg-easy</code> team. If you have any issues with the dashboard, please contact the author of the dashboard.
-See <a href="https://github.com/wg-easy/wg-easy/pull/1299">#1299</a> for more information.</p>
-</div>
+<h1 id="install-amneziawg-kernel-module-on-ubuntu-24x"><a class="toclink" href="#install-amneziawg-kernel-module-on-ubuntu-24x">Install AmneziaWG Kernel Module on Ubuntu 24.x</a></h1>
+<p>To work, you must install the AmneziaWG kernel module on the host system.</p>
+<h2 id="links"><a class="toclink" href="#links">Links</a></h2>
+<ul>
+<li><a href="https://habr.com/ru/companies/amnezia/articles/807539/">Habr</a></li>
+<li><a href="https://github.com/amnezia-vpn/amneziawg-linux-kernel-module">Repository amneziawg-linux-kernel-module</a></li>
+</ul>
+<h2 id="instructions-to-install"><a class="toclink" href="#instructions-to-install">Instructions to install</a></h2>
+<p>Open the Terminal and follow the instructions:</p>
+<h3 id="1-update-the-system-to-the-latest-package-versions-including-the-latest-available-kernel-version-by-running-the-following-commands"><a class="toclink" href="#1-update-the-system-to-the-latest-package-versions-including-the-latest-available-kernel-version-by-running-the-following-commands">1. Update the system to the latest package versions, including the latest available kernel version, by running the following commands:</a></h3>
+<p>sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get full-upgrade</p>
+<p>After updating the kernel, a reboot is required.</p>
+<h3 id="11-install-docker-if-not-already-installed"><a class="toclink" href="#11-install-docker-if-not-already-installed">1.1 Install Docker if not already installed:</a></h3>
+<p>Updating the apt package indexes
+sudo apt update</p>
+<p>Installing additional packages
+sudo apt install curl software-properties-common ca-certificates apt-transport-https -y</p>
+<p>Importing the GPG key
+wget -O- <a href="https://download.docker.com/linux/ubuntu/gpg">https://download.docker.com/linux/ubuntu/gpg</a> | gpg --dearmor | sudo tee /etc/apt/keyrings/docker.gpg &gt; /dev/null</p>
+<p>Adding the docker repository
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] <a href="https://download.docker.com/linux/ubuntu">https://download.docker.com/linux/ubuntu</a> noble stable"| sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</p>
+<p>We are updating the package indexes once again.
+sudo apt update</p>
+<p>Installing Docker
+sudo apt docker install docker-ce docker-cli docker-compose -y</p>
+<p>Let's make sure the installation is successful by checking the status in the system:
+sudo systemctl status docker</p>
+<h3 id="2-make-sure-that-you-have-configured-the-source-repositories-for-apt-run-nano-etcaptsourceslistdubuntusources-and-make-sure-that-there-is-at-least-one-line-starting-with-deb-src-and-containing-no-comments-if-not-then-add-deb-src-after-deb-approximate-view"><a class="toclink" href="#2-make-sure-that-you-have-configured-the-source-repositories-for-apt-run-nano-etcaptsourceslistdubuntusources-and-make-sure-that-there-is-at-least-one-line-starting-with-deb-src-and-containing-no-comments-if-not-then-add-deb-src-after-deb-approximate-view">2. Make sure that you have configured the source repositories for APT. Run nano /etc/apt/sources.list.d/ubuntu.sources and make sure that there is at least one line starting with deb-src and containing no comments. If not, then add "deb-src" after "deb". Approximate view:</a></h3>
+<h2 id="see-the-sourceslist5-manual-page-for-further-settings"><a class="toclink" href="#see-the-sourceslist5-manual-page-for-further-settings">See the sources.list(5) manual page for further settings.</a></h2>
+<p>Types: deb deb-src
+URIs: <a href="http://de.archive.ubuntu.com/ubuntu">http://de.archive.ubuntu.com/ubuntu</a>
+Suites: noble noble-updates noble-backports
+Components: main universe restricted multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg</p>
+<h2 id="ubuntu-security-updates-aside-from-uris-and-suites"><a class="toclink" href="#ubuntu-security-updates-aside-from-uris-and-suites">Ubuntu security updates. Aside from URIs and Suites,</a></h2>
+<h2 id="this-should-mirror-your-choices-in-the-previous-section"><a class="toclink" href="#this-should-mirror-your-choices-in-the-previous-section">this should mirror your choices in the previous section.</a></h2>
+<p>Types: deb deb-src
+URIs: <a href="http://security.ubuntu.com/ubuntu">http://security.ubuntu.com/ubuntu</a>
+Suites: noble-security
+Components: main universe restricted multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg</p>
+<p>After that, repeat step 1.</p>
+<h3 id="3-set-the-prerequisites-run"><a class="toclink" href="#3-set-the-prerequisites-run">3. Set the prerequisites — run:</a></h3>
+<p>sudo apt install -y software-properties-common python3-launchpadlib gnupg2 linux-headers-$(uname -r)</p>
+<h3 id="4-according-to-the-instructions-httpsgithubcomamnezia-vpnamneziawg-linux-kernel-moduleissues91-you-need-to-download-install-and-compile-the-correct-modules"><a class="toclink" href="#4-according-to-the-instructions-httpsgithubcomamnezia-vpnamneziawg-linux-kernel-moduleissues91-you-need-to-download-install-and-compile-the-correct-modules">4. According to the instructions <a href="https://github.com/amnezia-vpn/amneziawg-linux-kernel-module/issues/91">https://github.com/amnezia-vpn/amneziawg-linux-kernel-module/issues/91</a> you need to download, install and compile the correct modules:</a></h3>
+<p>sudo dpkg --configure -a
+sudo apt update -y &amp;&amp; sudo apt upgrade -y</p>
+<p>Add repository:
+sudo add-apt-repository ppa:amnesia/ppa</p>
+<p>Install the Amnesia modules:
+sudo apt-get install -y amneziawg</p>
+<p>After the error, delete the old module and replace it with a working one:
+sudo apt-get purge amneziawg-dkms amneziawg
+sudo apt clean
+sudo apt autoremove</p>
+<p>sudo apt-get install dkms
+sudo apt update -y &amp;&amp; sudo apt upgrade -y</p>
+<p>curl -L -O <a href="https://ppa.launchpadcontent.net/amnezia/ppa/ubuntu/pool/main/a/amneziawg-linux-kmod/amneziawg-dkms_1.0.0-0~202506030004+b91faba~ubuntu24.10.1_all.deb">https://ppa.launchpadcontent.net/amnezia/ppa/ubuntu/pool/main/a/amneziawg-linux-kmod/amneziawg-dkms_1.0.0-0~202506030004+b91faba~ubuntu24.10.1_all.deb</a>
+dpkg -i amneziawg-dkms_1.0.0-0<sub>202506030004+b91faba</sub>ubuntu24.10.1_all.deb</p>
+<p>After compiling the module, reinstall the Amnesia module package:</p>
+<p>sudo apt-get install -y amneziawg</p>
+<p>service restart dpkg
+reboot
+needrestart</p>
+<p>dpkg -s</p>
+<h3 id="5-deploy-amnesia-on-a-docker-server"><a class="toclink" href="#5-deploy-amnesia-on-a-docker-server">5. Deploy Amnesia on a Docker server:</a></h3>
+<p>sudo mkdir -p /etc/docker/containers/awg-easy
+sudo curl -o /etc/docker/containers/awg-easy/docker-compose.yml <a href="https://raw.githubusercontent.com/evoll/awg-easy/main/docker-compose.yml">https://raw.githubusercontent.com/evoll/awg-easy/main/docker-compose.yml</a></p>
+<p>cd /etc/docker/containers/awg-easy
+sudo docker compose up -d</p>
+<p>Update awg-easy
+To update awg-easy to the latest version, run:</p>
+<p>cd /etc/docker/containers/awg-easy
+sudo docker compose pull
+sudo docker compose up -d</p>
+<p>The settings can be viewed here: <a href="https://evoll.github.io/awg-easy/latest/examples/tutorials/basic-installation/">https://evoll.github.io/awg-easy/latest/examples/tutorials/basic-installation/</a></p>
 
 
 
@@ -1741,6 +1971,8 @@ See <a href="https://github.com/wg-easy/wg-easy/pull/1299">#1299</a> for more in
 
 
 
+
+  
 
 
 
@@ -1791,10 +2023,10 @@ See <a href="https://github.com/wg-easy/wg-easy/pull/1299">#1299</a> for more in
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.expand", "navigation.instant", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.expand", "navigation.instant", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

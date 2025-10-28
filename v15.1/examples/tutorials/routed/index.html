@@ -12,13 +12,13 @@
         <meta name="author" content="AmneziaWG Easy">
       
       
-        <link rel="canonical" href="https://evoll.github.io/awg-easy/v15.1/advanced/metrics/prometheus/">
+        <link rel="canonical" href="https://evoll.github.io/awg-easy/v15.1/examples/tutorials/routed/">
       
       
-        <link rel="prev" href="../../config/unattended-setup/">
+        <link rel="prev" href="../reverse-proxyless/">
       
       
-        <link rel="next" href="../../migrate/">
+        <link rel="next" href="../traefik/">
       
       
       <link rel="icon" href="../../../assets/logo/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Prometheus - awg-easy</title>
+        <title>Routed setup (No NAT) - awg-easy</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enable-prometheus" class="md-skip">
+        <a href="#requirements" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Prometheus
+              Routed setup (No NAT)
             
           </span>
         </div>
@@ -281,13 +281,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../api/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../advanced/api/" class="md-tabs__link">
           
   
   
@@ -323,6 +321,8 @@
   
   
   
+    
+  
   
     
     
@@ -330,11 +330,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../examples/tutorials/adguard/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../adguard/" class="md-tabs__link">
           
   
   
@@ -483,29 +485,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
@@ -518,7 +517,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Advanced
@@ -532,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/" class="md-nav__link">
+      <a href="../../../advanced/api/" class="md-nav__link">
         
   
   
@@ -598,7 +597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../config/amnezia/" class="md-nav__link">
+      <a href="../../../advanced/config/amnezia/" class="md-nav__link">
         
   
   
@@ -621,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../config/amneziawg-kernel-module/" class="md-nav__link">
+      <a href="../../../advanced/config/amneziawg-kernel-module/" class="md-nav__link">
         
   
   
@@ -644,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../config/experimental-config/" class="md-nav__link">
+      <a href="../../../advanced/config/experimental-config/" class="md-nav__link">
         
   
   
@@ -667,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../config/optional-config/" class="md-nav__link">
+      <a href="../../../advanced/config/optional-config/" class="md-nav__link">
         
   
   
@@ -690,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../config/unattended-setup/" class="md-nav__link">
+      <a href="../../../advanced/config/unattended-setup/" class="md-nav__link">
         
   
   
@@ -718,8 +717,6 @@
                 
   
   
-    
-  
   
   
     
@@ -730,11 +727,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -750,7 +749,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             Metrics
@@ -761,30 +760,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Prometheus
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../advanced/metrics/prometheus/" class="md-nav__link">
         
   
   
@@ -795,51 +774,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#enable-prometheus" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enable Prometheus
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-prometheus" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configure Prometheus
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grafana-dashboard" class="md-nav__link">
-    <span class="md-ellipsis">
-      Grafana Dashboard
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -903,7 +837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../migrate/" class="md-nav__link">
+      <a href="../../../advanced/migrate/" class="md-nav__link">
         
   
   
@@ -926,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../migrate/from-14-to-15/" class="md-nav__link">
+      <a href="../../../advanced/migrate/from-14-to-15/" class="md-nav__link">
         
   
   
@@ -1080,26 +1014,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -1112,7 +1049,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Examples
@@ -1123,8 +1060,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -1133,13 +1072,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" checked>
         
           
           <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
@@ -1155,7 +1092,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_1">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
@@ -1169,7 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/adguard/" class="md-nav__link">
+      <a href="../adguard/" class="md-nav__link">
         
   
   
@@ -1192,7 +1129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/auto-updates/" class="md-nav__link">
+      <a href="../auto-updates/" class="md-nav__link">
         
   
   
@@ -1215,7 +1152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/basic-installation/" class="md-nav__link">
+      <a href="../basic-installation/" class="md-nav__link">
         
   
   
@@ -1238,7 +1175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/caddy/" class="md-nav__link">
+      <a href="../caddy/" class="md-nav__link">
         
   
   
@@ -1261,7 +1198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/docker-run/" class="md-nav__link">
+      <a href="../docker-run/" class="md-nav__link">
         
   
   
@@ -1284,7 +1221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/dockerless/" class="md-nav__link">
+      <a href="../dockerless/" class="md-nav__link">
         
   
   
@@ -1307,7 +1244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/podman-nft/" class="md-nav__link">
+      <a href="../podman-nft/" class="md-nav__link">
         
   
   
@@ -1330,7 +1267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/reverse-proxyless/" class="md-nav__link">
+      <a href="../reverse-proxyless/" class="md-nav__link">
         
   
   
@@ -1350,10 +1287,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../examples/tutorials/routed/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Routed setup (No NAT)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1364,6 +1321,84 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-parameters-on-the-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel parameters (on the host)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-static-routes-on-your-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add static routes on your router
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Add static routes on your router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wg-easy-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      wg-easy configuration
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1376,7 +1411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/tutorials/traefik/" class="md-nav__link">
+      <a href="../traefik/" class="md-nav__link">
         
   
   
@@ -1643,27 +1678,60 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enable-prometheus" class="md-nav__link">
+  <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      Enable Prometheus
+      Requirements
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-prometheus" class="md-nav__link">
+  <a href="#docker-setup" class="md-nav__link">
     <span class="md-ellipsis">
-      Configure Prometheus
+      Docker setup
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#grafana-dashboard" class="md-nav__link">
+  <a href="#kernel-parameters-on-the-host" class="md-nav__link">
     <span class="md-ellipsis">
-      Grafana Dashboard
+      Kernel parameters (on the host)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-static-routes-on-your-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add static routes on your router
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Add static routes on your router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wg-easy-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      wg-easy configuration
     </span>
   </a>
   
@@ -1685,7 +1753,7 @@
 
 
   
-    <a href="https://github.com/evoll/awg-easy/edit/main/docs/content/advanced/metrics/prometheus.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/evoll/awg-easy/edit/main/docs/content/examples/tutorials/routed.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1694,41 +1762,79 @@
     
       
     
-    <a href="https://github.com/evoll/awg-easy/raw/main/docs/content/advanced/metrics/prometheus.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/evoll/awg-easy/raw/main/docs/content/examples/tutorials/routed.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-  <h1>Prometheus</h1>
+  <h1>Routed setup (No NAT)</h1>
 
-<p>To monitor the WireGuard server, you can use <a href="https://prometheus.io/">Prometheus</a> and <a href="https://grafana.com/">Grafana</a>. The container exposes a <code>/metrics/prometheus</code> endpoint that can be scraped by Prometheus.</p>
-<h2 id="enable-prometheus"><a class="toclink" href="#enable-prometheus">Enable Prometheus</a></h2>
-<p>To enable Prometheus metrics, go to Admin Panel &gt; General and enable Prometheus.</p>
-<p>You can optionally set a Bearer Password for the metrics endpoints. This is useful if you want to expose the metrics endpoint to the internet.</p>
-<h2 id="configure-prometheus"><a class="toclink" href="#configure-prometheus">Configure Prometheus</a></h2>
-<p>You need to add a scrape config to your Prometheus configuration file. Here is an example:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">scrape_configs</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">job_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;awg-easy&#39;</span>
-<span class="w">      </span><span class="nt">scrape_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30s</span>
-<span class="w">      </span><span class="nt">metrics_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/metrics/prometheus</span>
-<span class="w">      </span><span class="nt">static_configs</span><span class="p">:</span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">targets</span><span class="p">:</span>
-<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;localhost:51821&#39;</span>
-<span class="w">      </span><span class="nt">authorization</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bearer</span>
-<span class="w">          </span><span class="nt">credentials</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;SuperSecurePassword&#39;</span>
+<p>This guide shows how to run <strong>awg-easy</strong> with a routed setup, so packets are forwarded instead of NATed.</p>
+<p>In a routed design, each WireGuard client keeps its own IPv4/IPv6 address. That means you can identify clients by their real addresses instead of seeing everything as the WireGuard server’s IP.</p>
+<h2 id="requirements"><a class="toclink" href="#requirements">Requirements</a></h2>
+<ol>
+<li>You know how to add static routes on your router to the WireGuard server.</li>
+</ol>
+<h2 id="docker-setup"><a class="toclink" href="#docker-setup">Docker setup</a></h2>
+<p>To make use of our own IPv4/IPv6 addresses, run the container with the <code>network_mode: host</code> option.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">awg-easy</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/evoll/awg-easy:15</span>
+<span class="w">        </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">awg-easy</span>
+<span class="w">        </span><span class="nt">network_mode</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;host&#39;</span>
+<span class="w">        </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./config:/etc/wireguard</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/lib/modules:/lib/modules:ro</span>
+<span class="w">        </span><span class="nt">cap_add</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NET_ADMIN</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SYS_MODULE</span>
+<span class="w">        </span><span class="nt">devices</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/dev/net/tun:/dev/net/tun</span>
+<span class="w">        </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
 </code></pre></div>
-<h2 id="grafana-dashboard"><a class="toclink" href="#grafana-dashboard">Grafana Dashboard</a></h2>
-<p>You can use the following Grafana dashboard to visualize the metrics:</p>
-<p><a href="https://grafana.com/grafana/dashboards/21733-wireguard/"><img alt="Grafana Dashboard" src="https://grafana.com/api/dashboards/21733/images/16863/image" /></a></p>
-<p><a href="https://grafana.com/grafana/dashboards/21733-wireguard/">21733</a></p>
+<p>Because we’re on the host network, remove any <code>ports:</code> and container <code>sysctls:</code> you might have had before.</p>
+<h2 id="kernel-parameters-on-the-host"><a class="toclink" href="#kernel-parameters-on-the-host">Kernel parameters (on the host)</a></h2>
+<p>With host networking, system sysctls must be set on the <strong>host</strong>. On your host, create <code>/etc/sysctl.d/90-wireguard.conf</code>:</p>
+<div class="highlight"><pre><span></span><code>net.ipv4.ip_forward=1
+net.ipv4.conf.all.src_valid_mark=1
+net.ipv6.conf.all.disable_ipv6=0
+net.ipv6.conf.all.forwarding=1
+net.ipv6.conf.default.forwarding=1
+</code></pre></div>
+<p>Apply and verify:</p>
+<div class="highlight"><pre><span></span><code>sysctl<span class="w"> </span>-p<span class="w"> </span>/etc/sysctl.d/90-wireguard.conf
+sysctl<span class="w"> </span>-n<span class="w"> </span>net.ipv4.ip_forward<span class="w">   </span><span class="c1"># should print 1</span>
+</code></pre></div>
+<h2 id="add-static-routes-on-your-router"><a class="toclink" href="#add-static-routes-on-your-router">Add static routes on your router</a></h2>
+<p>Pick an IPv4 and IPv6 subnet for your clients and add static routes on your router, pointing to the WireGuard server's LAN addresses.</p>
+<h3 id="example"><a class="toclink" href="#example">Example</a></h3>
 <div class="admonition note">
-<p class="admonition-title">Unofficial</p>
-<p>The Grafana dashboard is not official and is not maintained by the <code>wg-easy</code> team. If you have any issues with the dashboard, please contact the author of the dashboard.
-See <a href="https://github.com/wg-easy/wg-easy/pull/1299">#1299</a> for more information.</p>
+<p class="admonition-title">2001:db8::/32</p>
+<p>The <em>documentation prefix</em> <code>2001:db8::/32</code> (RFC 3849) used in this example is not meant for production use, replace it with your own ISP-assigned IPv6 prefix (GUA) or local prefix (ULA)</p>
 </div>
+<p>I want my WireGuard clients in <code>192.168.0.0/24</code> and <code>2001:db8:abc:0::/64</code>.</p>
+<ul>
+<li>Routed IPv4 subnet: <code>192.168.0.0/24</code></li>
+<li>Routed IPv6 prefix: <code>2001:db8:abc:0::/64</code></li>
+<li>WireGuard server IPs: <code>192.168.10.118</code> and <code>2001:db8:abc:10:216:3eff:fedb:949e</code></li>
+</ul>
+<p>On your router:</p>
+<ul>
+<li>Route <code>192.168.0.0/24</code> → next hop <code>192.168.10.118</code></li>
+<li>Route <code>2001:db8:abc:0::/64</code> → next hop <code>2001:db8:abc:10:216:3eff:fedb:949e</code></li>
+</ul>
+<p>Don't forget to create the necessary firewall rules to allow these subnets to travel across your LAN. Some routers or servers may require specific Outbound NAT rules for the chosen IPv4 and IPv6 subnets to allow traffic to traverse your LAN.</p>
+<h2 id="wg-easy-configuration"><a class="toclink" href="#wg-easy-configuration"><code>wg-easy</code> configuration</a></h2>
+<p>In the Web UI → Admin → Interface, click Change CIDR and set the IPv4/IPv6 routed subnets you chose above. Save.</p>
+<p>Then go to Admin → Hooks and add:</p>
+<p>PostUp</p>
+<div class="highlight"><pre><span></span><code>iptables<span class="w"> </span>-A<span class="w"> </span>INPUT<span class="w"> </span>-p<span class="w"> </span>udp<span class="w"> </span>-m<span class="w"> </span>udp<span class="w"> </span>--dport<span class="w"> </span><span class="o">{{</span>port<span class="o">}}</span><span class="w"> </span>-j<span class="w"> </span>ACCEPT<span class="p">;</span><span class="w"> </span>iptables<span class="w"> </span>-A<span class="w"> </span>FORWARD<span class="w"> </span>-i<span class="w"> </span>wg0<span class="w"> </span>-j<span class="w"> </span>ACCEPT<span class="p">;</span><span class="w"> </span>iptables<span class="w"> </span>-A<span class="w"> </span>FORWARD<span class="w"> </span>-o<span class="w"> </span>wg0<span class="w"> </span>-j<span class="w"> </span>ACCEPT<span class="p">;</span><span class="w"> </span>ip6tables<span class="w"> </span>-A<span class="w"> </span>INPUT<span class="w"> </span>-p<span class="w"> </span>udp<span class="w"> </span>-m<span class="w"> </span>udp<span class="w"> </span>--dport<span class="w"> </span><span class="o">{{</span>port<span class="o">}}</span><span class="w"> </span>-j<span class="w"> </span>ACCEPT<span class="p">;</span><span class="w"> </span>ip6tables<span class="w"> </span>-A<span class="w"> </span>FORWARD<span class="w"> </span>-i<span class="w"> </span>wg0<span class="w"> </span>-j<span class="w"> </span>ACCEPT<span class="p">;</span><span class="w"> </span>ip6tables<span class="w"> </span>-A<span class="w"> </span>FORWARD<span class="w"> </span>-o<span class="w"> </span>wg0<span class="w"> </span>-j<span class="w"> </span>ACCEPT
+</code></pre></div>
+<p>PostDown</p>
+<div class="highlight"><pre><span></span><code>iptables<span class="w"> </span>-D<span class="w"> </span>INPUT<span class="w"> </span>-p<span class="w"> </span>udp<span class="w"> </span>-m<span class="w"> </span>udp<span class="w"> </span>--dport<span class="w"> </span><span class="o">{{</span>port<span class="o">}}</span><span class="w"> </span>-j<span class="w"> </span>ACCEPT<span class="p">;</span><span class="w"> </span>iptables<span class="w"> </span>-D<span class="w"> </span>FORWARD<span class="w"> </span>-i<span class="w"> </span>wg0<span class="w"> </span>-j<span class="w"> </span>ACCEPT<span class="p">;</span><span class="w"> </span>iptables<span class="w"> </span>-D<span class="w"> </span>FORWARD<span class="w"> </span>-o<span class="w"> </span>wg0<span class="w"> </span>-j<span class="w"> </span>ACCEPT<span class="p">;</span><span class="w"> </span>ip6tables<span class="w"> </span>-D<span class="w"> </span>INPUT<span class="w"> </span>-p<span class="w"> </span>udp<span class="w"> </span>-m<span class="w"> </span>udp<span class="w"> </span>--dport<span class="w"> </span><span class="o">{{</span>port<span class="o">}}</span><span class="w"> </span>-j<span class="w"> </span>ACCEPT<span class="p">;</span><span class="w"> </span>ip6tables<span class="w"> </span>-D<span class="w"> </span>FORWARD<span class="w"> </span>-i<span class="w"> </span>wg0<span class="w"> </span>-j<span class="w"> </span>ACCEPT<span class="p">;</span><span class="w"> </span>ip6tables<span class="w"> </span>-D<span class="w"> </span>FORWARD<span class="w"> </span>-o<span class="w"> </span>wg0<span class="w"> </span>-j<span class="w"> </span>ACCEPT
+</code></pre></div>
 
 
 
