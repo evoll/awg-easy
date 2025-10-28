@@ -185,8 +185,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue';
-
 const { t } = useI18n();
 
 // fetch server-side interface data
@@ -195,18 +193,8 @@ const { data: _data, refresh } = await useFetch(`/api/admin/interface`, {
 });
 
 // keep a local reactive copy for editing (v-model needs a writable ref)
-const data = ref(_data.value ?? null);
+const data = toRef(_data.value);
 
-// keep local copy updated after refresh / when _data changes
-watch(
-  _data,
-  (val) => {
-    data.value = val ?? null;
-  },
-  { immediate: true }
-);
-
-// submit handler (posts the edited data)
 const _submit = useSubmit(
   `/api/admin/interface`,
   {
@@ -222,7 +210,7 @@ function submit() {
 // revert — reload server data and overwrite local copy
 async function revert() {
   await refresh();
-  data.value = _data.value ?? null;
+  data.value = toRef(_data.value).value;
 }
 
 // change CIDR
@@ -255,7 +243,7 @@ const _restartInterface = useSubmit(
 
 async function restartInterface() {
   // call without passing undefined
-  await _restartInterface();
+  await _restartInterface(undefined);
 }
 </script>
 /* eslint-disable @typescript-eslint/no-unused-vars */
