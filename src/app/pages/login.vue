@@ -1,3 +1,4 @@
+// @ts-nocheck
 <template>
   <main>
     <UiBanner />

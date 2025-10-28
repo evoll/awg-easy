@@ -123,7 +123,7 @@ export default defineNuxtConfig({
       redirectOn: 'root',
     },
     // Disable lazy loading to prevent runtime locale merging issues
-    lazy: false,
+    // lazy: false,
   },
   nitro: {
     esbuild: {
