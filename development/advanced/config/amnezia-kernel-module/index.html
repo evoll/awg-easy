@@ -12,28 +12,28 @@
         <meta name="author" content="AmneziaWG Easy">
       
       
-        <link rel="canonical" href="https://evoll.github.io/awg-easy/development/guides/clients/">
+        <link rel="canonical" href="https://evoll.github.io/awg-easy/development/advanced/config/amnezia-kernel-module/">
       
       
-        <link rel="prev" href="../cli/">
+        <link rel="prev" href="../../api/">
       
       
-        <link rel="next" href="../setup/">
+        <link rel="next" href="../amnezia/">
       
       
-      <link rel="icon" href="../../assets/logo/favicon.png">
+      <link rel="icon" href="../../../assets/logo/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
-        <title>Edit Client - awg-easy</title>
+        <title>AmneziaWG Kernel Module - awg-easy</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#general" class="md-skip">
+        <a href="#amneziawg-kernel-module" class="md-skip">
           Skip to content
         </a>
       
@@ -96,9 +96,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="awg-easy" class="md-header__button md-logo" aria-label="awg-easy" data-md-component="logo">
+    <a href="../../.." title="awg-easy" class="md-header__button md-logo" aria-label="awg-easy" data-md-component="logo">
       
-  <img src="../../assets/logo/logo.png" alt="logo">
+  <img src="../../../assets/logo/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Edit Client
+              AmneziaWG Kernel Module
             
           </span>
         </div>
@@ -226,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -245,7 +245,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../faq/" class="md-tabs__link">
+      <a href="../../../faq/" class="md-tabs__link">
         
   
   
@@ -264,7 +264,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../getting-started/" class="md-tabs__link">
+      <a href="../../../getting-started/" class="md-tabs__link">
         
   
   
@@ -281,11 +281,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../advanced/api/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../api/" class="md-tabs__link">
           
   
   
@@ -305,7 +307,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../contributing/general/" class="md-tabs__link">
+        <a href="../../../contributing/general/" class="md-tabs__link">
           
   
   
@@ -332,7 +334,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../examples/tutorials/adguard/" class="md-tabs__link">
+        <a href="../../../examples/tutorials/adguard/" class="md-tabs__link">
           
   
   
@@ -351,13 +353,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../2fa/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../guides/2fa/" class="md-tabs__link">
           
   
   
@@ -391,9 +391,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="awg-easy" class="md-nav__button md-logo" aria-label="awg-easy" data-md-component="logo">
+    <a href="../../.." title="awg-easy" class="md-nav__button md-logo" aria-label="awg-easy" data-md-component="logo">
       
-  <img src="../../assets/logo/logo.png" alt="logo">
+  <img src="../../../assets/logo/logo.png" alt="logo">
 
     </a>
     awg-easy
@@ -420,7 +420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -442,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/" class="md-nav__link">
+      <a href="../../../faq/" class="md-nav__link">
         
   
   
@@ -464,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
+      <a href="../../../getting-started/" class="md-nav__link">
         
   
   
@@ -483,26 +483,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -515,7 +518,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Advanced
@@ -529,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/api/" class="md-nav__link">
+      <a href="../../api/" class="md-nav__link">
         
   
   
@@ -549,8 +552,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -559,13 +564,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
         
           
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -581,7 +584,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             Config
@@ -592,10 +595,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../advanced/config/amnezia-kernel-module/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    AmneziaWG Kernel Module
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -606,6 +631,176 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Configurations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic Detection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-configuration-alpine-lts-61250" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Configuration (Alpine LTS 6.12.50)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-kernel-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Kernel Version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-which-implementation-is-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Which Implementation is Active
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-application-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Application Logs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fallback-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fallback Behavior
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Documentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -618,7 +813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/config/amnezia/" class="md-nav__link">
+      <a href="../amnezia/" class="md-nav__link">
         
   
   
@@ -641,7 +836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/config/experimental-config/" class="md-nav__link">
+      <a href="../experimental-config/" class="md-nav__link">
         
   
   
@@ -664,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/config/optional-config/" class="md-nav__link">
+      <a href="../optional-config/" class="md-nav__link">
         
   
   
@@ -687,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/config/unattended-setup/" class="md-nav__link">
+      <a href="../unattended-setup/" class="md-nav__link">
         
   
   
@@ -761,7 +956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/metrics/prometheus/" class="md-nav__link">
+      <a href="../../metrics/prometheus/" class="md-nav__link">
         
   
   
@@ -835,7 +1030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/migrate/" class="md-nav__link">
+      <a href="../../migrate/" class="md-nav__link">
         
   
   
@@ -858,7 +1053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/migrate/from-14-to-15/" class="md-nav__link">
+      <a href="../../migrate/from-14-to-15/" class="md-nav__link">
         
   
   
@@ -939,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../contributing/general/" class="md-nav__link">
+      <a href="../../../contributing/general/" class="md-nav__link">
         
   
   
@@ -962,7 +1157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../contributing/issues-and-pull-requests/" class="md-nav__link">
+      <a href="../../../contributing/issues-and-pull-requests/" class="md-nav__link">
         
   
   
@@ -985,7 +1180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../contributing/translation/" class="md-nav__link">
+      <a href="../../../contributing/translation/" class="md-nav__link">
         
   
   
@@ -1101,7 +1296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/tutorials/adguard/" class="md-nav__link">
+      <a href="../../../examples/tutorials/adguard/" class="md-nav__link">
         
   
   
@@ -1124,7 +1319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/tutorials/auto-updates/" class="md-nav__link">
+      <a href="../../../examples/tutorials/auto-updates/" class="md-nav__link">
         
   
   
@@ -1147,7 +1342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/tutorials/basic-installation/" class="md-nav__link">
+      <a href="../../../examples/tutorials/basic-installation/" class="md-nav__link">
         
   
   
@@ -1170,7 +1365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/tutorials/caddy/" class="md-nav__link">
+      <a href="../../../examples/tutorials/caddy/" class="md-nav__link">
         
   
   
@@ -1193,7 +1388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/tutorials/docker-run/" class="md-nav__link">
+      <a href="../../../examples/tutorials/docker-run/" class="md-nav__link">
         
   
   
@@ -1216,7 +1411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/tutorials/dockerless/" class="md-nav__link">
+      <a href="../../../examples/tutorials/dockerless/" class="md-nav__link">
         
   
   
@@ -1239,7 +1434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/tutorials/podman-nft/" class="md-nav__link">
+      <a href="../../../examples/tutorials/podman-nft/" class="md-nav__link">
         
   
   
@@ -1262,7 +1457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/tutorials/reverse-proxyless/" class="md-nav__link">
+      <a href="../../../examples/tutorials/reverse-proxyless/" class="md-nav__link">
         
   
   
@@ -1285,7 +1480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/tutorials/routed/" class="md-nav__link">
+      <a href="../../../examples/tutorials/routed/" class="md-nav__link">
         
   
   
@@ -1308,7 +1503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/tutorials/traefik/" class="md-nav__link">
+      <a href="../../../examples/tutorials/traefik/" class="md-nav__link">
         
   
   
@@ -1343,29 +1538,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   
@@ -1378,7 +1570,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Guides
@@ -1392,7 +1584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2fa/" class="md-nav__link">
+      <a href="../../../guides/2fa/" class="md-nav__link">
         
   
   
@@ -1415,7 +1607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../admin/" class="md-nav__link">
+      <a href="../../../guides/admin/" class="md-nav__link">
         
   
   
@@ -1438,7 +1630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cli/" class="md-nav__link">
+      <a href="../../../guides/cli/" class="md-nav__link">
         
   
   
@@ -1458,30 +1650,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Edit Client
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../guides/clients/" class="md-nav__link">
         
   
   
@@ -1492,96 +1664,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#general" class="md-nav__link">
-    <span class="md-ellipsis">
-      General
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#address" class="md-nav__link">
-    <span class="md-ellipsis">
-      Address
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#allowed-ips" class="md-nav__link">
-    <span class="md-ellipsis">
-      Allowed IPs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#server-allowed-ips" class="md-nav__link">
-    <span class="md-ellipsis">
-      Server Allowed IPs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dns" class="md-nav__link">
-    <span class="md-ellipsis">
-      DNS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hooks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actions
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1594,7 +1676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../setup/" class="md-nav__link">
+      <a href="../../../guides/setup/" class="md-nav__link">
         
   
   
@@ -1617,7 +1699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ubuntu24/" class="md-nav__link">
+      <a href="../../../guides/ubuntu24/" class="md-nav__link">
         
   
   
@@ -1640,7 +1722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ubuntu24ru/" class="md-nav__link">
+      <a href="../../../guides/ubuntu24ru/" class="md-nav__link">
         
   
   
@@ -1680,6 +1762,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1688,74 +1772,152 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#general" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      General
+      Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Details
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#address" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#supported-configurations" class="md-nav__link">
     <span class="md-ellipsis">
-      Address
+      Supported Configurations
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#allowed-ips" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#automatic-detection" class="md-nav__link">
     <span class="md-ellipsis">
-      Allowed IPs
+      Automatic Detection
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#server-allowed-ips" class="md-nav__link">
-    <span class="md-ellipsis">
-      Server Allowed IPs
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dns" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      DNS
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-configuration-alpine-lts-61250" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Configuration (Alpine LTS 6.12.50)
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#hooks" class="md-nav__link">
+  <a href="#verification" class="md-nav__link">
     <span class="md-ellipsis">
-      Hooks
+      Verification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-kernel-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Kernel Version
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#actions" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#check-which-implementation-is-active" class="md-nav__link">
     <span class="md-ellipsis">
-      Actions
+      Check Which Implementation is Active
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-application-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Application Logs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fallback-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fallback Behavior
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Documentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1775,7 +1937,7 @@
 
 
   
-    <a href="https://github.com/evoll/awg-easy/edit/main/docs/content/guides/clients.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/evoll/awg-easy/edit/main/docs/content/advanced/config/amnezia-kernel-module.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1784,52 +1946,170 @@
     
       
     
-    <a href="https://github.com/evoll/awg-easy/raw/main/docs/content/guides/clients.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/evoll/awg-easy/raw/main/docs/content/advanced/config/amnezia-kernel-module.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-  <h1>Edit Client</h1>
-
-<h2 id="general"><a class="toclink" href="#general">General</a></h2>
+<h1 id="amneziawg-kernel-module"><a class="toclink" href="#amneziawg-kernel-module">AmneziaWG Kernel Module</a></h1>
+<h2 id="overview"><a class="toclink" href="#overview">Overview</a></h2>
+<p>This build includes support for the <strong>AmneziaWG kernel module</strong>, pre-built for Alpine Linux LTS kernel (6.12.50). The kernel module provides better performance than the userspace implementation.</p>
+<h3 id="implementation-details"><a class="toclink" href="#implementation-details">Implementation Details</a></h3>
+<p>The Docker image includes two AmneziaWG components:</p>
+<ol>
+<li><strong>amneziawg-tools</strong> (<code>awg</code>, <code>awg-quick</code>) - Command-line tools for managing AmneziaWG</li>
+<li><strong>amneziawg.ko</strong> - Pre-compiled kernel module for Alpine LTS kernel 6.12.50</li>
+</ol>
+<p>Kernel Module Compatibility</p>
+<p>The included kernel module is <strong>pre-built for Alpine Linux LTS kernel 6.12.50</strong>. This matches the kernel used after running the bare-metal installation script which upgrades from <code>-virt</code> to <code>linux-lts</code>.</p>
+<h3 id="supported-configurations"><a class="toclink" href="#supported-configurations">Supported Configurations</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ <strong>Supported</strong></td>
+<td>Alpine Linux with <code>linux-lts</code> kernel (6.12.50)</td>
+</tr>
+<tr>
+<td>✅ <strong>Supported</strong></td>
+<td>Hosts upgraded via the bare-metal install script</td>
+</tr>
+<tr>
+<td>⚠️ <strong>Limited Support</strong></td>
+<td>Other kernel versions (will fall back to userspace)</td>
+</tr>
+<tr>
+<td>⚠️ <strong>Limited Support</strong></td>
+<td>Non-Alpine distributions (userspace only)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="automatic-detection"><a class="toclink" href="#automatic-detection">Automatic Detection</a></h3>
+<p>When <code>EXPERIMENTAL_AWG=true</code>, the system will:</p>
+<ol>
+<li>Check if kernel version matches the pre-built module (6.12.50)</li>
+<li>If match: Load the AmneziaWG kernel module</li>
+<li>If mismatch: Fall back to AmneziaWG userspace</li>
+<li>Respect <code>OVERRIDE_AUTO_AWG</code> to force specific implementation</li>
+</ol>
+<h2 id="usage"><a class="toclink" href="#usage">Usage</a></h2>
+<h3 id="standard-configuration-alpine-lts-61250"><a class="toclink" href="#standard-configuration-alpine-lts-61250">Standard Configuration (Alpine LTS 6.12.50)</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">awg-easy</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">awg-easy</span>
+<span class="w">        </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">awg-easy</span>
+<span class="w">        </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPERIMENTAL_AWG=true</span>
+<span class="w">        </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/etc/wireguard</span>
+<span class="w">        </span><span class="nt">cap_add</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NET_ADMIN</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SYS_MODULE</span>
+<span class="w">        </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;51820:51820/udp&#39;</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;51821:51821/tcp&#39;</span>
+</code></pre></div>
+<h2 id="verification"><a class="toclink" href="#verification">Verification</a></h2>
+<h3 id="check-kernel-version"><a class="toclink" href="#check-kernel-version">Check Kernel Version</a></h3>
+<p><strong>First, verify your host is running the compatible kernel:</strong></p>
+<div class="highlight"><pre><span></span><code>uname<span class="w"> </span>-r
+</code></pre></div>
+<p><strong>Expected output for kernel module support:</strong></p>
+<p><code>6.12.50-0-lts</code></p>
+<h3 id="check-which-implementation-is-active"><a class="toclink" href="#check-which-implementation-is-active">Check Which Implementation is Active</a></h3>
+<p><strong>Check if kernel module is loaded</strong></p>
+<div class="highlight"><pre><span></span><code>lsmod<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;amneziawg|wireguard&#39;</span>
+</code></pre></div>
+<p><strong>AmneziaWG mode:</strong> You’ll see <code>amneziawg</code> in output</p>
+<p><strong>Standard WireGuard mode:</strong> You’ll see <code>wireguard</code> in output</p>
+<h3 id="check-application-logs"><a class="toclink" href="#check-application-logs">Check Application Logs</a></h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>logs<span class="w"> </span>awg-easy<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>amnezia
+</code></pre></div>
+<h3 id="fallback-behavior"><a class="toclink" href="#fallback-behavior">Fallback Behavior</a></h3>
+<p>The system automatically chooses the best available implementation:</p>
+<ol>
+<li><strong>Kernel module</strong> (if host kernel == 6.12.50)</li>
+<li><strong>amneziawg-go userspace</strong> (all other cases)</li>
+<li><strong>Standard WireGuard</strong> (if <code>OVERRIDE_AUTO_AWG=wg</code>)</li>
+</ol>
+<h2 id="troubleshooting"><a class="toclink" href="#troubleshooting">Troubleshooting</a></h2>
+<p><strong>Kernel Version Mismatch</strong></p>
+<p>If you’re not running Alpine LTS kernel 6.12.50, the system will automatically use AmneziaWG userspace. To force standard WireGuard:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">environment</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OVERRIDE_AUTO_AWG=wg</span><span class="w"> </span><span class="c1"># Force standard WireGuard</span>
+</code></pre></div>
+<p><strong>Module Won’t Load</strong></p>
+<p>Ensure you have the required capabilities:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">cap_add</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SYS_MODULE</span>
+<span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p><strong>Verify Module File</strong></p>
+<p>Check if the pre-built module is present:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>awg-easy<span class="w"> </span>ls<span class="w"> </span>-la<span class="w"> </span>/lib/modules/
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>awg-easy<span class="w"> </span>cat<span class="w"> </span>/etc/amneziawg-kernel-version.txt
+</code></pre></div>
+<p><strong>Security Considerations</strong></p>
+<p>Running with <code>privileged: true</code> grants the container significant host access. Consider:</p>
+<ol>
+<li>Use <code>cap_add</code> with specific capabilities instead of <code>privileged</code> when possible</li>
+<li>Audit the kernel module source before building</li>
+<li>Pin to specific image versions in production</li>
+<li>Monitor container behavior</li>
+</ol>
+<p>Performance</p>
+<p><strong>Kernel Module Advantages:</strong></p>
 <ul>
-<li><strong>Name</strong>: The name of the client.</li>
-<li><strong>Enabled</strong>: Whether the client can connect to the VPN.</li>
-<li><strong>Expire Date</strong>: The date the client will be disabled.</li>
+<li>Lower CPU usage (10-30% improvement)</li>
+<li>Better throughput on high-speed networks</li>
+<li>Native kernel integration</li>
 </ul>
-<h2 id="address"><a class="toclink" href="#address">Address</a></h2>
+<p><strong>Userspace Advantages:</strong></p>
 <ul>
-<li><strong>IPv4</strong>: The IPv4 address of the client.</li>
-<li><strong>IPv6</strong>: The IPv6 address of the client.</li>
+<li>No kernel dependencies</li>
+<li>Easier deployment</li>
+<li>Better isolation</li>
 </ul>
-<h2 id="allowed-ips"><a class="toclink" href="#allowed-ips">Allowed IPs</a></h2>
-<p>Which IPs will be routed through the VPN.</p>
-<p>This will not prevent the user from modifying it locally and accessing IP ranges that they should not be able to access.</p>
-<p>Use firewall rules to prevent access to IP ranges that the user should not be able to access.</p>
-<h2 id="server-allowed-ips"><a class="toclink" href="#server-allowed-ips">Server Allowed IPs</a></h2>
-<p>Which IPs will be routed to the client.</p>
-<h2 id="dns"><a class="toclink" href="#dns">DNS</a></h2>
-<p>The DNS server that the client will use.</p>
-<h2 id="advanced"><a class="toclink" href="#advanced">Advanced</a></h2>
+<p>For most users, the <strong>userspace implementation is sufficient</strong>. Use the kernel module if:</p>
 <ul>
-<li><strong>MTU</strong>: The maximum transmission unit for the client.</li>
-<li><strong>Persistent Keepalive</strong>: The interval for sending keepalive packets to the server.</li>
+<li>You have high throughput requirements (&gt;500 Mbps)</li>
+<li>CPU usage is a concern</li>
+<li>You’re already running privileged containers</li>
 </ul>
-<h2 id="hooks"><a class="toclink" href="#hooks">Hooks</a></h2>
-<p>This can only be used for clients that use <code>wg-quick</code>. Setting this will throw a error when importing the config on other clients.</p>
+<h3 id="environment-variables"><a class="toclink" href="#environment-variables">Environment Variables</a></h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EXPERIMENTAL_AWG</code></td>
+<td><code>false</code></td>
+<td>Enable AmneziaWG support</td>
+</tr>
+<tr>
+<td><code>OVERRIDE_AUTO_AWG</code></td>
+<td><code>undefined</code></td>
+<td>Force <code>awg</code> or <code>wg</code> implementation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="related-documentation"><a class="toclink" href="#related-documentation">Related Documentation</a></h3>
 <ul>
-<li><strong>PreUp</strong>: Commands to run before the interface is brought up.</li>
-<li><strong>PostUp</strong>: Commands to run after the interface is brought up.</li>
-<li><strong>PreDown</strong>: Commands to run before the interface is brought down.</li>
-<li><strong>PostDown</strong>: Commands to run after the interface is brought down.</li>
-</ul>
-<h2 id="actions"><a class="toclink" href="#actions">Actions</a></h2>
-<ul>
-<li><strong>Save</strong>: Save the changes made in the form.</li>
-<li><strong>Revert</strong>: Revert the changes made in the form.</li>
-<li><strong>Delete</strong>: Delete the client.</li>
+<li>AmneziaWG Configuration</li>
+<li>Experimental Features</li>
 </ul>
 
 
@@ -1837,9 +2117,6 @@
 
 
 
-
-  
-  
 
 
 
@@ -1893,10 +2170,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.expand", "navigation.instant", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.expand", "navigation.instant", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
