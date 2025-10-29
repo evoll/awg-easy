@@ -33,32 +33,35 @@ type SubmitOpts<
 
 export function useSubmit<
   R extends NitroFetchRequest,
-  O extends NitroFetchOptions<R> & { body?: never },
+  O extends NitroFetchOptions<R>,
   T = unknown,
->(url: R, options: O, opts: SubmitOpts<R, T, O>) {
+>(
+  url: R,
+  options: O,
+  opts: SubmitOpts<R, T, O>
+): (data: unknown) => Promise<void> {
   const toast = useToast();
+  let isSubmitting = false;
 
   return async (data: unknown) => {
+    if (isSubmitting) return;
+    isSubmitting = true;
     try {
-      const res = await $fetch(url, {
-        ...options,
-        body: data,
-      });
+      const res = await $fetch<T>(url, { ...options, body: data });
 
       if (!opts.noSuccessToast) {
         toast.showToast({
           type: 'success',
-          message: opts.successMsg,
+          message: opts.successMsg ?? 'Успешно выполнено',
         });
       }
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       await opts.revert(true, res as any);
     } catch (e) {
       if (e instanceof FetchError) {
         toast.showToast({
           type: 'error',
-          message: e.data.message,
+          message: e.data?.message ?? e.message ?? 'Ошибка запроса',
         });
       } else if (e instanceof Error) {
         toast.showToast({
@@ -66,9 +69,11 @@ export function useSubmit<
           message: e.message,
         });
       } else {
-        console.error(e);
+        console.error('[useSubmit] Unexpected error:', e);
       }
       await opts.revert(false, undefined);
+    } finally {
+      isSubmitting = false;
     }
   };
 }
