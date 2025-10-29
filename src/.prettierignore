@@ -2,7 +2,6 @@ pnpm-lock.yaml
 eslint.config.mjs
 server/database/migrations/meta
 app/pages
-app/composables
 app/utils
 server/api/interface.get.ts
 server/database/repositories/interface
