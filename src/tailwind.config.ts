@@ -1,5 +1,12 @@
 import type { Config } from 'tailwindcss';
-import tailwindForms from '@tailwindcss/forms';
+
+let tailwindForms: any;
+try {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  tailwindForms = require('@tailwindcss/forms');
+} catch {
+  tailwindForms = () => {};
+}
 
 export default {
   darkMode: 'selector',
