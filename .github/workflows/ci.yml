@@ -20,6 +20,7 @@ jobs:
           version: 10.19.0
 
       - name: Install dependencies
+        run: pnpm install --lockfile-only
         run: pnpm install --frozen-lockfile
 
       - name: Ensure Prettier and Tailwind plugin are installed
