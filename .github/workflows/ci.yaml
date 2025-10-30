@@ -2,7 +2,8 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
 
 jobs:
@@ -13,18 +14,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 1?? Устанавливаем pnpm ПЕРЕД setup-node
+      # 1?? Устанавливаем pnpm перед setup-node
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 10.19.0
 
-      # 2?? Настраиваем Node и включаем кэш pnpm
+      # 2?? Настраиваем Node.js и кэш pnpm
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: pnpm
 
       # 3?? Проверяем lockfile
       - name: Validate pnpm-lock.yaml
@@ -48,7 +49,7 @@ jobs:
           git commit -m "chore(ci): update pnpm-lock.yaml"
           git push
 
-      # 5?? Запускаем проверку и сборку
+      # 5?? Проверка и сборка
       - name: Lint, typecheck and build
         if: env.lockfile_updated == 'false'
         run: pnpm run check:all
