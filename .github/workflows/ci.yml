@@ -11,30 +11,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: ?? Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js and PNPM
+      - name: ?? Setup Node.js and PNPM
         uses: pnpm/action-setup@v4
         with:
           version: 10.19.0
 
-      - name: Install dependencies
-        run: pnpm install --lockfile-only
+      - name: ?? Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: ?? Install dependencies (frozen lockfile)
         run: pnpm install --frozen-lockfile
 
-      - name: Ensure Prettier and Tailwind plugin are installed
-        run: pnpm add -D prettier prettier-plugin-tailwindcss
-      
-      - name: Run Prettier (safe mode)
-        run: pnpm prettier . --write --ignore-unknown
+      - name: ?? Run Prettier (safe mode)
+        run: pnpm prettier . --write --ignore-unknown || true
 
-
-      - name: Run format check
-        run: pnpm run format:check || pnpm run format
-
-      - name: Run lint
-        run: pnpm run lint --fix || true
-
-      - name: Run all checks
+      - name: ?? Run all checks (types, lint, format, build)
         run: pnpm run check:all
