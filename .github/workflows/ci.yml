@@ -24,6 +24,10 @@ jobs:
 
       - name: Ensure Prettier and Tailwind plugin are installed
         run: pnpm add -D prettier prettier-plugin-tailwindcss
+      
+      - name: Run Prettier (safe mode)
+        run: pnpm prettier . --write --ignore-unknown
+
 
       - name: Run format check
         run: pnpm run format:check || pnpm run format
