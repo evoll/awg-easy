@@ -6,15 +6,15 @@
  */
 
 export interface AwgObfuscationParams {
-  jc: number;   // Junk packet count
+  jc: number; // Junk packet count
   jmin: number; // Junk packet minimum size
   jmax: number; // Junk packet maximum size
-  s1: number;   // Init header junk size
-  s2: number;   // Response header junk size
-  h1: number;   // Init magic header
-  h2: number;   // Response magic header
-  h3: number;   // Cookie magic header
-  h4: number;   // Transport magic header
+  s1: number; // Init header junk size
+  s2: number; // Response header junk size
+  h1: number; // Init magic header
+  h2: number; // Response magic header
+  h3: number; // Cookie magic header
+  h4: number; // Transport magic header
 }
 
 // Constants from amneziawg-go
@@ -24,7 +24,7 @@ const MESSAGE_RESPONSE_SIZE = 92;
 // Amnezia documentation constraints (assuming MTU = 1280)
 const MTU = 1280;
 const S1_MAX_MTU = MTU - MESSAGE_INITIATION_SIZE; // 1132
-const S2_MAX_MTU = MTU - MESSAGE_RESPONSE_SIZE;   // 1188
+const S2_MAX_MTU = MTU - MESSAGE_RESPONSE_SIZE; // 1188
 
 // Recommended ranges from Amnezia documentation for random generation
 const JC_MIN = 4;
