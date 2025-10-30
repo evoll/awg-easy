@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 10
+
+      - name: Install dependencies (validate lockfile)
+        id: install
+        run: |
+          set +e
+          pnpm install --frozen-lockfile
+          RESULT=$?
+          set -e
+          if [ $RESULT -ne 0 ]; then
+            echo "?? Lockfile out of date. Attempting to update..."
+            pnpm install
+            echo "lockfile_updated=true" >> $GITHUB_ENV
+          else
+            echo "lockfile_updated=false" >> $GITHUB_ENV
+          fi
+
+      - name: Lint, typecheck and build
+        if: env.lockfile_updated == 'false'
+        run: |
+          pnpm check:all
+
+      - name: Report outdated lockfile
+        if: env.lockfile_updated == 'true'
+        run: |
+          echo "? pnpm-lock.yaml is outdated compared to package.json."
+          echo "Please run locally:"
+          echo "  pnpm install"
+          echo "and commit the updated lockfile."
+          exit 1
