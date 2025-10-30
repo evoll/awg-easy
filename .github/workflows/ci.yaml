@@ -13,18 +13,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 1?? Устанавливаем pnpm ПЕРЕД setup-node
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.19.0
+
+      # 2?? Настраиваем Node и включаем кэш pnpm
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'pnpm'
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10.19.0
-          run_install: false
-
+      # 3?? Проверяем lockfile
       - name: Validate pnpm-lock.yaml
         id: validate-lock
         run: |
@@ -34,6 +36,7 @@ jobs:
             echo "lockfile_updated=false" >> $GITHUB_ENV
           fi
 
+      # 4?? Обновляем lockfile при несовпадении
       - name: Update lockfile (if needed)
         if: env.lockfile_updated == 'true'
         run: |
@@ -45,7 +48,7 @@ jobs:
           git commit -m "chore(ci): update pnpm-lock.yaml"
           git push
 
+      # 5?? Запускаем проверку и сборку
       - name: Lint, typecheck and build
         if: env.lockfile_updated == 'false'
-        run: |
-          pnpm run check:all
+        run: pnpm run check:all
