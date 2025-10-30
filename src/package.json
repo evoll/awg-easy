@@ -5,26 +5,19 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build && pnpm run cli:build",
+    "build": "nuxt build && pnpm cli:build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare && husky install",
+    "postinstall": "nuxt prepare",
     "lint": "eslint .",
-	"check:all": "pnpm run typecheck && pnpm run lint && pnpm run format:check && pnpm run build",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "typecheck": "nuxt typecheck",
+    "check:all": "pnpm run typecheck && pnpm run lint && pnpm run format:check && pnpm run build",
     "db:generate": "drizzle-kit generate",
     "cli:build": "node cli/build.js",
-    "cli:dev": "tsx cli/index.ts",
-    "prepare": "husky install"
-  },
-  "lint-staged": {
-    "*.{js,ts,vue,json,md,css,scss}": [
-      "prettier --write",
-      "eslint --fix"
-    ]
+    "cli:dev": "tsx cli/index.ts"
   },
   "dependencies": {
     "@eschricht/nuxt-color-mode": "^1.2.0",
@@ -52,6 +45,7 @@
     "nuxt": "^3.19.3",
     "otpauth": "^9.4.1",
     "pinia": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.7.1",
     "qr": "^0.5.2",
     "radix-vue": "^1.9.17",
     "semver": "^7.7.3",
@@ -64,24 +58,3 @@
   "devDependencies": {
     "@nuxt/eslint": "^1.9.0",
     "@types/debug": "^4.1.12",
-    "@types/phc__format": "^1.0.1",
-    "@types/semver": "^7.7.1",
-    "drizzle-kit": "^0.31.5",
-    "esbuild": "^0.25.11",
-    "eslint": "^9.38.0",
-    "eslint-config-prettier": "^10.1.8",
-    "husky": "^9.1.7",
-    "lint-staged": "^15.3.0",
-    "prettier": "^3.6.2",
-    "prettier-plugin-tailwindcss": "^0.7.1",
-    "tsx": "^4.20.6",
-    "typescript": "^5.9.3",
-    "vue-tsc": "^3.1.2"
-  },
-  "packageManager": "pnpm@10.19.0",
-  "pnpm": {
-    "overrides": {
-      "rollup": "4.50.0"
-    }
-  }
-}

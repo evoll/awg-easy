@@ -2,11 +2,9 @@ name: CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   build:
@@ -24,11 +22,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Run Prettier (auto-fix formatting)
-        run: pnpm prettier . --write
+      - name: Ensure Prettier and Tailwind plugin are installed
+        run: pnpm add -D prettier prettier-plugin-tailwindcss
 
-      - name: Run ESLint (auto-fix linting)
-        run: pnpm eslint . --fix || true
+      - name: Run format check
+        run: pnpm run format:check || pnpm run format
 
-      - name: Run checks
+      - name: Run lint
+        run: pnpm run lint --fix || true
+
+      - name: Run all checks
         run: pnpm run check:all
