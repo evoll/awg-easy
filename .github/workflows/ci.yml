@@ -14,42 +14,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 1?? Устанавливаем pnpm перед setup-node
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 10.19.0
 
-      # 2?? Настраиваем Node.js и кэш pnpm
-      - name: Use Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
+          cache: 'pnpm'
 
-      # 3?? Проверяем lockfile
-      - name: Validate pnpm-lock.yaml
-        id: validate-lock
-        run: |
-          if ! pnpm install --frozen-lockfile; then
-            echo "lockfile_updated=true" >> $GITHUB_ENV
-          else
-            echo "lockfile_updated=false" >> $GITHUB_ENV
-          fi
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-      # 4?? Обновляем lockfile при несовпадении
-      - name: Update lockfile (if needed)
-        if: env.lockfile_updated == 'true'
-        run: |
-          echo "Lockfile out of date, updating..."
-          pnpm install
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add pnpm-lock.yaml
-          git commit -m "chore(ci): update pnpm-lock.yaml"
-          git push
-
-      # 5?? Проверка и сборка
-      - name: Lint, typecheck and build
-        if: env.lockfile_updated == 'false'
+      - name: Run checks
         run: pnpm run check:all
