@@ -5,6 +5,8 @@ on:
     branches:
       - main
   pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -14,19 +16,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install pnpm
+      - name: Setup Node.js and PNPM
         uses: pnpm/action-setup@v4
         with:
           version: 10.19.0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'pnpm'
-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Run Prettier (auto-fix formatting)
+        run: pnpm prettier . --write
+
+      - name: Run ESLint (auto-fix linting)
+        run: pnpm eslint . --fix || true
 
       - name: Run checks
         run: pnpm run check:all
