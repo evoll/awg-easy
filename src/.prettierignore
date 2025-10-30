@@ -1,5 +1,6 @@
 pnpm-lock.yaml
 eslint.config.mjs
+tailwind.config.ts
 server/database/migrations/meta
 app/pages
 app/utils
