@@ -1,4 +1,5 @@
 ﻿# AmneziaWG Kernel Module
+
 ## Overview
 
 This build includes support for the **AmneziaWG kernel module**, pre-built for Alpine Linux LTS kernel (6.12.50). The kernel module provides better performance than the userspace implementation.
@@ -10,7 +11,7 @@ The Docker image includes two AmneziaWG components:
 1. **amneziawg-tools** (`awg`, `awg-quick`) - Command-line tools for managing AmneziaWG
 2. **amneziawg.ko** - Pre-compiled kernel module for Alpine LTS kernel 6.12.50
 
- Kernel Module Compatibility
+Kernel Module Compatibility
 
 The included kernel module is **pre-built for Alpine Linux LTS kernel 6.12.50**. This matches the kernel used after running the bare-metal installation script which upgrades from `-virt` to `linux-lts`.
 
@@ -56,7 +57,7 @@ services:
 
 ## Verification
 
-###  Check Kernel Version
+### Check Kernel Version
 
 **First, verify your host is running the compatible kernel:**
 
@@ -68,7 +69,7 @@ uname -r
 
 `6.12.50-0-lts`
 
-###  Check Which Implementation is Active
+### Check Which Implementation is Active
 
 **Check if kernel module is loaded**
 
@@ -133,7 +134,7 @@ Running with `privileged: true` grants the container significant host access. Co
 3. Pin to specific image versions in production
 4. Monitor container behavior
 
- Performance
+Performance
 
 **Kernel Module Advantages:**
 
