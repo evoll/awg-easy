@@ -7,21 +7,11 @@ RUN npm install --global corepack@latest
 RUN corepack enable pnpm
 
 # Copy Web UI
-WORKDIR /app/src
-
-# Скопировать манифесты проекта
 COPY src/package.json src/pnpm-lock.yaml ./
+RUN pnpm install
 
-# Устанавливаем зависимости проекта
-RUN pnpm install --frozen-lockfile
-
-# Копируем весь исходный код
-COPY src .
-
-# Обновляем postcss-конфиг для Tailwind 4 (если не скопировался)
-RUN echo 'export default { plugins: { "@tailwindcss/postcss": {}, autoprefixer: {} } };' > postcss.config.js
-
-# Сборка Web UI
+# Build UI
+COPY src ./
 RUN pnpm build
 
 # Build amneziawg-tools
