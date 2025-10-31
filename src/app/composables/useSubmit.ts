@@ -11,8 +11,8 @@ type RevertFn<
   T = unknown,
   O extends NitroFetchOptions<R> = NitroFetchOptions<R>,
 > = (
-  success: boolean,
-  data:
+  _success: boolean,
+  _data?:
     | TypedInternalResponse<
         R,
         T,
@@ -58,7 +58,7 @@ export function useSubmit<
       if (e instanceof FetchError) {
         toast.showToast({
           type: 'error',
-          message: e.data.message,
+          message: e.data?.message ?? 'Ошибка при выполнении запроса',
         });
       } else if (e instanceof Error) {
         toast.showToast({

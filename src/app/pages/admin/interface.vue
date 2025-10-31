@@ -23,9 +23,11 @@
       </FormGroup>
       <FormGroup v-if="!data.isUsingAwg">
         <FormHeading>AmneziaWG</FormHeading>
-        <p class="text-sm text-muted-foreground col-span-2">
+        <p class="text-muted-foreground col-span-2 text-sm">
           AmneziaWG obfuscation is not currently active. To enable it, set
-          <code class="bg-muted px-1 py-0.5 rounded">EXPERIMENTAL_AWG=true</code>
+          <code class="bg-muted rounded px-1 py-0.5"
+            >EXPERIMENTAL_AWG=true</code
+          >
           and ensure the amneziawg kernel module is available.
         </p>
       </FormGroup>

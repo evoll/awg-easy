@@ -93,7 +93,9 @@ async function generateRandomAwgParams(db: DBServiceType) {
   const currentInterface = await db.interfaces.get();
 
   if (!currentInterface) {
-    DB_DEBUG('No interface found when checking defaults; skipping AWG generation');
+    DB_DEBUG(
+      'No interface found when checking defaults; skipping AWG generation'
+    );
     return;
   }
 
